@@ -24,7 +24,7 @@ class ViewController: UIViewController {
 //        self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())  //讓slide bar 能使用手勢拉動
 
         
-        
+        //hello
 //        
         skView = SKView(frame: UIScreen.mainScreen().bounds)
         skView.backgroundColor = SKColor.whiteColor()
