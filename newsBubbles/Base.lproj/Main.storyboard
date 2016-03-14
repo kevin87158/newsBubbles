@@ -94,17 +94,10 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kWG-tU-teQ">
-                                <rect key="frame" x="420" y="92" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" selectedImage="filing-7" systemItem="mostViewed" id="6t3-DS-s1x"/>
-                    <connections>
-                        <outlet property="slideBar" destination="Y61-tH-Xm3" id="F6c-lJ-K22"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PpS-sv-D2b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

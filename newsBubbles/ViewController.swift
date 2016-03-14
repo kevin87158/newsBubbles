@@ -13,15 +13,16 @@ class ViewController: UIViewController {
     private var skView: SKView!
     private var floatingCollectionScene: BubblesScene!
 
-    @IBOutlet weak var slideBar: UIBarButtonItem!  //滑動列
+//    @IBOutlet weak var slideBar: UIBarButtonItem!  //滑動列
     
     override func viewDidLoad() {
         super.viewDidLoad()
    
-        slideBar.target = self.revealViewController()
-        slideBar.action = Selector("revealToggle:")
-        
+        //slide bar
+//        slideBar.target = self.revealViewController()
+//        slideBar.action = Selector("revealToggle:")
 //        self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())  //讓slide bar 能使用手勢拉動
+        
         
         skView = SKView(frame: UIScreen.mainScreen().bounds)
         skView.backgroundColor = SKColor.whiteColor()
