@@ -21,7 +21,7 @@ class ViewController: UIViewController {
         slideBar.target = self.revealViewController()
         slideBar.action = Selector("revealToggle:")
         
-        self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())  //讓slide bar 能使用手勢拉動
+//        self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())  //讓slide bar 能使用手勢拉動
 
         
         
