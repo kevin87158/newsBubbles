@@ -26,7 +26,15 @@ class ViewController: UIViewController {
         skView = SKView(frame: UIScreen.mainScreen().bounds)
         skView.backgroundColor = SKColor.whiteColor()
         view.addSubview(skView)
-    
+        
+        floatingCollectionScene = BubblesScene(size: skView.bounds.size)
+        let navBarHeight = CGRectGetHeight(navigationController!.navigationBar.frame)
+        let statusBarHeight = CGRectGetHeight(UIApplication.sharedApplication().statusBarFrame)
+        floatingCollectionScene.topOffset = navBarHeight + statusBarHeight
+        skView.presentScene(floatingCollectionScene)
+        
+        
+        
         // navigation item
         navigationItem.rightBarButtonItem = UIBarButtonItem(
             barButtonSystemItem: .Done,
