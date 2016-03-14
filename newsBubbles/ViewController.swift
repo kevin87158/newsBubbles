@@ -22,23 +22,11 @@ class ViewController: UIViewController {
         slideBar.action = Selector("revealToggle:")
         
 //        self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())  //讓slide bar 能使用手勢拉動
-
         
+        skView = SKView(frame: UIScreen.mainScreen().bounds)
+        skView.backgroundColor = SKColor.whiteColor()
+        view.addSubview(skView)
     
-  
-        
-        
-//        skView = SKView(frame: UIScreen.mainScreen().bounds)
-//        skView.backgroundColor = SKColor.whiteColor()
-//        view.addSubview(skView)
-//        
-//        floatingCollectionScene = BubblesScene(size: skView.bounds.size)
-        let navBarHeight = CGRectGetHeight(navigationController!.navigationBar.frame)
-       let statusBarHeight = CGRectGetHeight(UIApplication.sharedApplication().statusBarFrame)
-        floatingCollectionScene.topOffset = navBarHeight + statusBarHeight
-        skView.presentScene(floatingCollectionScene)
-        
-        
         // navigation item
         navigationItem.rightBarButtonItem = UIBarButtonItem(
             barButtonSystemItem: .Done,
