@@ -103,10 +103,10 @@
             </objects>
             <point key="canvasLocation" x="1028" y="1913"/>
         </scene>
-        <!--View Controller-->
+        <!--Second View Controller-->
         <scene sceneID="AEZ-Ob-tbR">
             <objects>
-                <viewController id="EA2-e2-xbb" sceneMemberID="viewController">
+                <viewController id="EA2-e2-xbb" customClass="secondViewController" customModule="newsBubbles" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="0Wp-Qe-ZVq"/>
                         <viewControllerLayoutGuide type="bottom" id="WS4-dv-a1d"/>
