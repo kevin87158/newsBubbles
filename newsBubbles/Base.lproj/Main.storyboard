@@ -95,7 +95,7 @@
                                 </items>
                             </navigationBar>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kWG-tU-teQ">
-                                <rect key="frame" x="195" y="260" width="46" height="30"/>
+                                <rect key="frame" x="431" y="487" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
                             </button>
                         </subviews>
