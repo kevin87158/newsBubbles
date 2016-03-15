@@ -32,7 +32,7 @@ class BubbleNode: SIFloatingNode {
         
         
         
-        node.labelNode.text = "Hello"
+        node.labelNode.text = ""
         node.labelNode.position = CGPointZero
         node.labelNode.fontColor = SKColor.whiteColor()
         node.labelNode.fontSize = 10

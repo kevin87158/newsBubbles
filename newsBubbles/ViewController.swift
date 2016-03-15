@@ -45,6 +45,7 @@ class ViewController: UIViewController {
         
         for _ in 0..<20 {
             let node = BubbleNode.instantiate()
+            node.labelNode.text = String(arc4random()%100)
             floatingCollectionScene.addChild(node)
         }
         

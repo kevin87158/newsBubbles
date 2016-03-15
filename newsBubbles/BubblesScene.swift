@@ -20,14 +20,14 @@ extension CGFloat {
 }
 
 class BubblesScene: SIFloatingCollectionScene {
-    var bottomOffset: CGFloat = 200
+    var bottomOffset: CGFloat = 50
     var topOffset: CGFloat = 0
     
     override func didMoveToView(view: SKView) {
         super.didMoveToView(view)
         configure()
     }
-    
+
     private func configure() {
         backgroundColor = SKColor.whiteColor()
         scaleMode = .AspectFill
