@@ -74,10 +74,28 @@
             </objects>
             <point key="canvasLocation" x="248" y="1137"/>
         </scene>
+        <!--Third View Controller-->
+        <scene sceneID="v4D-1k-umg">
+            <objects>
+                <viewController storyboardIdentifier="thirdView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="2Nx-bL-Xcq" customClass="thirdViewController" customModule="newsBubbles" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1UZ-b7-rOD"/>
+                        <viewControllerLayoutGuide type="bottom" id="DDS-fk-Y2C"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="7RF-cb-GUa">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oQc-yz-10X" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1008" y="2587"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="n1N-t7-YWl">
             <objects>
-                <viewController id="sW0-QK-hTm" customClass="ViewController" customModule="newsBubbles" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="firstViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="sW0-QK-hTm" customClass="ViewController" customModule="newsBubbles" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="5DH-Nw-NYy"/>
                         <viewControllerLayoutGuide type="bottom" id="gsz-Jt-i8X"/>
@@ -98,15 +116,18 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" selectedImage="filing-7" systemItem="mostViewed" id="6t3-DS-s1x"/>
+                    <connections>
+                        <segue destination="2Nx-bL-Xcq" kind="show" id="mgD-uV-zRN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PpS-sv-D2b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1028" y="1913"/>
+            <point key="canvasLocation" x="1008" y="1809"/>
         </scene>
         <!--Second View Controller-->
         <scene sceneID="AEZ-Ob-tbR">
             <objects>
-                <viewController id="EA2-e2-xbb" customClass="secondViewController" customModule="newsBubbles" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="secondViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="EA2-e2-xbb" customClass="secondViewController" customModule="newsBubbles" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="0Wp-Qe-ZVq"/>
                         <viewControllerLayoutGuide type="bottom" id="WS4-dv-a1d"/>
@@ -120,7 +141,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PjY-8f-m7K" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1708" y="1913"/>
+            <point key="canvasLocation" x="1759" y="1809"/>
         </scene>
         <!--Item-->
         <scene sceneID="pNF-5V-Clx">
@@ -140,7 +161,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="60h-pV-eIR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2366" y="1913"/>
+            <point key="canvasLocation" x="2562" y="1809"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="FKj-QT-Mma">

@@ -26,7 +26,6 @@ class secondViewController: UIViewController {
         skView.presentScene(floatingCollectionScene)
         
         
-        
         // navigation item
         navigationItem.rightBarButtonItem = UIBarButtonItem(
             barButtonSystemItem: .Done,
@@ -36,6 +35,7 @@ class secondViewController: UIViewController {
         
         for _ in 0..<20 {
             let node = BubbleNode.instantiate()
+            node.labelNode.text = String(arc4random()%100)
             floatingCollectionScene.addChild(node)
         }
 

@@ -1,39 +1,34 @@
 //
-//  ViewController.swift
+//  thirdViewController.swift
 //  newsBubbles
 //
-//  Created by kevin on 2016/3/8.
+//  Created by yifan on 2016/3/16.
 //  Copyright © 2016年 kevin. All rights reserved.
 //
 
 import UIKit
 import SpriteKit
 
-class ViewController: UIViewController {
+class thirdViewController: UIViewController {
     private var skView: SKView!
     private var floatingCollectionScene: BubblesScene!
     
-
-//    @IBOutlet weak var slideBar: UIBarButtonItem!  //滑動列
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-   
-        //slide bar
-//        slideBar.target = self.revealViewController()
-//        slideBar.action = Selector("revealToggle:")
-//        self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())  //讓slide bar 能使用手勢拉動
-        
-        
         skView = SKView(frame: UIScreen.mainScreen().bounds)
         skView.backgroundColor = SKColor.whiteColor()
         view.addSubview(skView)
         
+        
+
         floatingCollectionScene = BubblesScene(size: skView.bounds.size)
+        print(navigationController)
         let navBarHeight = CGRectGetHeight(navigationController!.navigationBar.frame)
+        
         let statusBarHeight = CGRectGetHeight(UIApplication.sharedApplication().statusBarFrame)
+        
         floatingCollectionScene.topOffset = navBarHeight + statusBarHeight
-        skView.presentScene(floatingCollectionScene)  //泡泡呈現的位置
+        skView.presentScene(floatingCollectionScene)
         
         
         
@@ -48,27 +43,45 @@ class ViewController: UIViewController {
             let node = BubbleNode.instantiate()
             node.labelNode.text = String(arc4random()%100)
             floatingCollectionScene.addChild(node)
-        
-    
-                        
-           
         }
         
-    }
-    
-    func one(){
-    
-        print("qqw")
+        
+        
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    //    override func didReceiveMemoryWarning() {
+    //        super.didReceiveMemoryWarning()
+    //        // Dispose of any resources that can be recreated.
+    //    }
     dynamic private func commitSelection() {
         floatingCollectionScene.performCommitSelectionAnimation()
     }
-
-
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    /*
+    // MARK: - Navigation
+    
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    // Get the new view controller using segue.destinationViewController.
+    // Pass the selected object to the new view controller.
+    }
+    */
+    
 }
-

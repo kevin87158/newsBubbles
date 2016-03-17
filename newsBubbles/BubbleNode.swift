@@ -42,9 +42,22 @@ class BubbleNode: SIFloatingNode {
         node.addChild(node.labelNode)
     }
     
-    override func selectingAnimation() -> SKAction? {
+        override func selectingAnimation() -> SKAction? {
         removeActionForKey(BubbleNode.removingKey)
+
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            
+            let vc = storyboard.instantiateViewControllerWithIdentifier("thirdView")
+            
+            let vcc = storyboard.instantiateViewControllerWithIdentifier("firstViewController")
+            
+            vcc.presentViewController(vc, animated: true, completion: nil)
+//            self.navigationController!.pushViewController(self.storyboard!.instantiateViewControllerWithIdentifier("view2") as UIViewController, animated: true)
+            
+            
+                print(123)
         return SKAction.scaleTo(1.3, duration: 0.2)
+        
     }
     
     override func normalizeAnimation() -> SKAction? {
