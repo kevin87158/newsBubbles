@@ -26,7 +26,7 @@ class ViewController: UIViewController {
         
         
         skView = SKView(frame: UIScreen.mainScreen().bounds)
-        skView.backgroundColor = SKColor.whiteColor()
+        skView.backgroundColor = SKColor.blackColor()
         view.addSubview(skView)
         
         floatingCollectionScene = BubblesScene(size: skView.bounds.size)
@@ -49,18 +49,12 @@ class ViewController: UIViewController {
             node.labelNode.text = String(arc4random()%100)
             floatingCollectionScene.addChild(node)
         
-    
+            
                         
            
         }
         
     }
-    
-    func one(){
-    
-        print("qqw")
-    }
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -68,7 +62,6 @@ class ViewController: UIViewController {
     dynamic private func commitSelection() {
         floatingCollectionScene.performCommitSelectionAnimation()
     }
-
-
+    
 }
 

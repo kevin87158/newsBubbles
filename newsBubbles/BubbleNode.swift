@@ -7,7 +7,6 @@
 //
 
 import Foundation
-
 import UIKit
 import SpriteKit
 
@@ -49,12 +48,10 @@ class BubbleNode: SIFloatingNode {
             
             let vc = storyboard.instantiateViewControllerWithIdentifier("thirdView")
             
-            let vcc = storyboard.instantiateViewControllerWithIdentifier("firstViewController")
+            let vcc = storyboard.instantiateViewControllerWithIdentifier("firstView")
             
             vcc.presentViewController(vc, animated: true, completion: nil)
 //            self.navigationController!.pushViewController(self.storyboard!.instantiateViewControllerWithIdentifier("view2") as UIViewController, animated: true)
-            
-            
                 print(123)
         return SKAction.scaleTo(1.3, duration: 0.2)
         

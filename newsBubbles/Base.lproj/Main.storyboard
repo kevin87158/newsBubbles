@@ -95,7 +95,7 @@
         <!--View Controller-->
         <scene sceneID="n1N-t7-YWl">
             <objects>
-                <viewController storyboardIdentifier="firstViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="sW0-QK-hTm" customClass="ViewController" customModule="newsBubbles" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="firstView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="sW0-QK-hTm" customClass="ViewController" customModule="newsBubbles" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="5DH-Nw-NYy"/>
                         <viewControllerLayoutGuide type="bottom" id="gsz-Jt-i8X"/>

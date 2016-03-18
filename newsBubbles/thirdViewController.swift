@@ -61,7 +61,7 @@ class thirdViewController: UIViewController {
     dynamic private func commitSelection() {
         floatingCollectionScene.performCommitSelectionAnimation()
     }
-    
+   
     
     
     
