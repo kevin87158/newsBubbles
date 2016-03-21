@@ -16,8 +16,9 @@ class ViewController: UITabBarController{
     override func viewDidLoad() {
         super.viewDidLoad()
         skView = SKView(frame: UIScreen.mainScreen().bounds)
-        skView.backgroundColor = SKColor.blackColor()
+        skView.backgroundColor = SKColor.whiteColor()
         view.addSubview(skView)
+        
         
         floatingCollectionScene = BubblesScene(size: skView.bounds.size)
 //        let navBarHeight = CGRectGetHeight(navigationController!.navigationBar.frame)
@@ -36,7 +37,8 @@ class ViewController: UITabBarController{
         
         for _ in 0..<15 {
             let node = BubbleNode.instantiate()
-            node.labelNode.text = String(arc4random()%100)
+            node.VC = self
+            node.labelNode.text = String(arc4random()%15)
             floatingCollectionScene.addChild(node)
         }
         

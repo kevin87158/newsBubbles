@@ -12,7 +12,7 @@ import SpriteKit
 
 class BubbleNode: SIFloatingNode {
     var labelNode = SKLabelNode(fontNamed: "")
-    
+    var VC:UIViewController?
     
     class func instantiate() -> BubbleNode! {
         let node = BubbleNode(circleOfRadius: 50)
@@ -26,7 +26,10 @@ class BubbleNode: SIFloatingNode {
         let radius = boundingBox.size.width / 2.0;
         node.physicsBody = SKPhysicsBody(circleOfRadius: radius + 2)
         //泡泡顏色
-        node.fillColor = UIColor(hue: 20/100.0, saturation: 10/0.0588, brightness: 3/1.0000, alpha: 0.3)
+//        node.fillColor = SKColor(hue: 20/240.0, saturation: 10/240.0, brightness: 3/240.0, alpha: 0.3)
+        node.fillColor = SKColor(hue: 50.8, saturation: 0.912, brightness: 1.000, alpha: 0.3)
+      
+
         node.strokeColor = node.fillColor
         
         
@@ -48,10 +51,11 @@ class BubbleNode: SIFloatingNode {
             
             let vc = storyboard.instantiateViewControllerWithIdentifier("thirdViewController")
             
-            let vcc = storyboard.instantiateViewControllerWithIdentifier("ViewController")
+            //let vcc = storyboard.instantiateViewControllerWithIdentifier("ViewController")
             
-            vcc.presentViewController(vc, animated: true, completion: nil)
-
+            
+            VC!.presentViewController(vc, animated: true, completion: nil)
+        
             print(123)
         return SKAction.scaleTo(1.3, duration: 0.2)
         
@@ -59,7 +63,11 @@ class BubbleNode: SIFloatingNode {
     
     override func normalizeAnimation() -> SKAction? {
         removeActionForKey(BubbleNode.removingKey)
+        
+        
+        print(456)
         return SKAction.scaleTo(1, duration: 0.2)
+        
     }
     
     override func removeAnimation() -> SKAction? {
