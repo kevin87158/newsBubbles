@@ -44,7 +44,7 @@ class thirdViewController: UIViewController {
             action: "commitSelection"
         )
         
-        for _ in 0..<5 {
+        for _ in 0..<15 {
             let node = BubbleNode.instantiate()
             node.labelNode.text = String(arc4random()%100)
             floatingCollectionScene.addChild(node)

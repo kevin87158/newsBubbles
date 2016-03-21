@@ -264,7 +264,7 @@ public class SIFloatingCollectionScene: SKScene {
         magneticField = SKFieldNode.radialGravityField()
         magneticField.region = SKRegion(radius: 10000)
         magneticField.minimumRadius = 10000
-        magneticField.strength = 8000
+        magneticField.strength = 3000
         magneticField.position = CGPointMake(size.width / 2, size.height / 2)
         addChild(magneticField)
     }

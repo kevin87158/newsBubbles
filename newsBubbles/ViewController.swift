@@ -16,7 +16,7 @@ class ViewController: UITabBarController{
     override func viewDidLoad() {
         super.viewDidLoad()
         skView = SKView(frame: UIScreen.mainScreen().bounds)
-        skView.backgroundColor = SKColor.whiteColor()
+        skView.backgroundColor = SKColor.blackColor()
         view.addSubview(skView)
         
         floatingCollectionScene = BubblesScene(size: skView.bounds.size)
@@ -34,7 +34,7 @@ class ViewController: UITabBarController{
         //            action: "commitSelection"
         //        )
         
-        for _ in 0..<20 {
+        for _ in 0..<15 {
             let node = BubbleNode.instantiate()
             node.labelNode.text = String(arc4random()%100)
             floatingCollectionScene.addChild(node)

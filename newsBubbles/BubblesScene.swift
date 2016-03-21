@@ -21,7 +21,7 @@ extension CGFloat {
 
 class BubblesScene: SIFloatingCollectionScene {
     var bottomOffset: CGFloat = 50
-    var topOffset: CGFloat = 0
+    var topOffset: CGFloat = 50
     
     override func didMoveToView(view: SKView) {
         super.didMoveToView(view)

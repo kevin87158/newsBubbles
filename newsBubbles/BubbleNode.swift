@@ -24,9 +24,11 @@ class BubbleNode: SIFloatingNode {
         
         let boundingBox = CGPathGetBoundingBox(node.path);
         let radius = boundingBox.size.width / 2.0;
+
         node.physicsBody = SKPhysicsBody(circleOfRadius: radius + 2)
-        node.fillColor = SKColor(red: 1, green: 0, blue: 0.68, alpha: 1)
-        
+//        node.fillColor = SKColor.grayColor()
+//        node.fillColor = SKColor(red: 1, green: 0, blue: 0.68, alpha: 1)
+        node.fillColor = UIColor(hue: 20/100.0, saturation: 10/0.0588, brightness: 3/1.0000, alpha: 0.3)
         node.strokeColor = node.fillColor
         
         
@@ -74,4 +76,5 @@ class BubbleNode: SIFloatingNode {
         let repeatPulse = SKAction.repeatActionForever(pulse)
         return repeatPulse
     }
+    
 }
