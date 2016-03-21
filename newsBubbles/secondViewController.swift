@@ -37,7 +37,7 @@ class secondViewController: UIViewController {
         
     
         //生成泡泡的數量
-        for _ in 0..<20 {
+        for _ in 0..<15 {
             let node = BubbleNode.instantiate()
             node.labelNode.text = String(arc4random()%100)
             floatingCollectionScene.addChild(node)
