@@ -56,10 +56,14 @@ class BubbleNode: SIFloatingNode {
             
             VC!.presentViewController(vc, animated:true, completion: nil)
         
-        return SKAction.scaleTo(10, duration: 1)
         
+        print("change page ")
+        return SKAction.scaleTo(10, duration: 0.7)
+
     }
     
+    
+ 
     override func normalizeAnimation() -> SKAction? {
         removeActionForKey(BubbleNode.removingKey)
         

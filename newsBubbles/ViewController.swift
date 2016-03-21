@@ -19,21 +19,19 @@ class ViewController: UITabBarController{
         skView.backgroundColor = SKColor.whiteColor()
         view.addSubview(skView)
         
-        
+        //設定框架
         floatingCollectionScene = BubblesScene(size: skView.bounds.size)
-        let navBarHeight = CGRectGetHeight(navigationController!.navigationBar.frame)
-        let statusBarHeight = CGRectGetHeight(UIApplication.sharedApplication().statusBarFrame)
+//        let navBarHeight = CGRectGetHeight(navigationController!.navigationBar.frame)
+//        let statusBarHeight = CGRectGetHeight(UIApplication.sharedApplication().statusBarFrame)
+//        
+        
+        //這邊改寫成另種數值
+        let navBarHeight = CGRectGetHeight(self.accessibilityFrame.standardized)
+        let statusBarHeight = CGRectGetHeight(self.accessibilityFrame.standardized)
         floatingCollectionScene.topOffset = navBarHeight + statusBarHeight
         skView.presentScene(floatingCollectionScene)
+
         
-        
-        
-        // navigation item
-        //        navigationItem.rightBarButtonItem = UIBarButtonItem(
-        //            barButtonSystemItem: .Done,
-        //            target: self,
-        //            action: "commitSelection"
-        //        )
         
         for _ in 0..<15 {
             let node = BubbleNode.instantiate()
@@ -46,7 +44,17 @@ class ViewController: UITabBarController{
         
     }
     
-
+    
+    func backToRoot(sender:UIButton!){
+        self.navigationController?.popViewControllerAnimated(true)
+    }
+    
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        
+        
+    }
     
     
     

@@ -18,43 +18,83 @@ class thirdViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        print("thirdView")
+        
+                skView = SKView(frame: UIScreen.mainScreen().applicationFrame)
+                skView.backgroundColor = SKColor.blueColor()
+                view.addSubview(skView)
+
+                floatingCollectionScene = BubblesScene(size: skView.bounds.size)
+//                let navBarHeight = CGRectGetHeight(navigationController!.navigationBar.frame)
+//                let statusBarHeight = CGRectGetHeight(UIApplication.sharedApplication().statusBarFrame)
+        
+                let navBarHeight = CGRectGetHeight(self.accessibilityFrame.standardized)
+                let statusBarHeight = CGRectGetHeight(self.accessibilityFrame.standardized)
+                floatingCollectionScene.topOffset = navBarHeight + statusBarHeight
+                skView.presentScene(floatingCollectionScene)  //泡泡呈現的位置
+        
+//
+//                // navigation item 的測試
+        
+    //第一種
+//                navigationItem.rightBarButtonItem = UIBarButtonItem(
+//                    barButtonSystemItem: .Done,
+//                    target: self,
+//                    action: "commitSelection"
+//                )
+    //第二種
+        //        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil)
+        //        title = "返回上一頁
+
+    //第三種
+        let button:UIButton = UIButton()
+        
+        button.frame = CGRectMake(0, 0, 22, 22)
+        
+        button.addTarget(self, action: "back:", forControlEvents: UIControlEvents.TouchUpInside)  //back
+        
+        let leftItem: UIBarButtonItem = UIBarButtonItem()
+        
+        leftItem.style = .Plain
+        leftItem.title = "返回"
+        
+        self.navigationItem.leftBarButtonItem = leftItem
+        
+        
+        
+        
+        //印出泡泡
+                for _ in 0..<15 {
+                    let node = BubbleNode.instantiate()
+                    node.labelNode.text = String(arc4random()%100)
+                    floatingCollectionScene.addChild(node)
+                }
+
+      
         
 
-        
     }
+    
+    
+    func back(){
+    print("back")
+    }
+    
+    
     
     
     
     override func viewDidAppear(animated: Bool) {
-        skView = SKView(frame: UIScreen.mainScreen().bounds)
-        skView.backgroundColor = SKColor.whiteColor()
-        view.addSubview(skView)
-        
-        floatingCollectionScene = BubblesScene(size: skView.bounds.size)
-//                let navBarHeight = CGRectGetHeight(navigationController!.navigationBar.frame)
-//                let statusBarHeight = CGRectGetHeight(UIApplication.sharedApplication().statusBarFrame)
-//                floatingCollectionScene.topOffset = navBarHeight + statusBarHeight
-        skView.presentScene(floatingCollectionScene)  //泡泡呈現的位置
-        
-       
-//        // navigation item
-//        navigationItem.rightBarButtonItem = UIBarButtonItem(
-//            barButtonSystemItem: .Done,
-//            target: self,
-//            action: "commitSelection"
-//        )
-        
-        for _ in 0..<15 {
-            let node = BubbleNode.instantiate()
-            node.labelNode.text = String(arc4random()%100)
-            floatingCollectionScene.addChild(node)
-        }
-        
-        
-        
-        
         
     }
+    
+    
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+    }
+    
     
     
     override func didReceiveMemoryWarning() {

@@ -27,15 +27,8 @@ class secondViewController: UIViewController {
         floatingCollectionScene.topOffset = navBarHeight + statusBarHeight
         skView.presentScene(floatingCollectionScene)
         
+
         
-        // navigation item
-//        navigationItem.rightBarButtonItem = UIBarButtonItem(
-//            barButtonSystemItem: .Done,
-//            target: self,
-//            action: "commitSelection"
-//        )
-        
-    
         //生成泡泡的數量
         for _ in 0..<15 {
             let node = BubbleNode.instantiate()
