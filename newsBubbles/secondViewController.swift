@@ -15,14 +15,16 @@ class secondViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
         skView = SKView(frame: UIScreen.mainScreen().bounds)
         skView.backgroundColor = SKColor.whiteColor()
         view.addSubview(skView)
         
         floatingCollectionScene = BubblesScene(size: skView.bounds.size)
-//        let navBarHeight = CGRectGetHeight(navigationController!.navigationBar.frame)
-//        let statusBarHeight = CGRectGetHeight(UIApplication.sharedApplication().statusBarFrame)
-//        floatingCollectionScene.topOffset = navBarHeight + statusBarHeight
+        let navBarHeight = CGRectGetHeight(navigationController!.navigationBar.frame)
+        let statusBarHeight = CGRectGetHeight(UIApplication.sharedApplication().statusBarFrame)
+        floatingCollectionScene.topOffset = navBarHeight + statusBarHeight
         skView.presentScene(floatingCollectionScene)
         
         
@@ -33,7 +35,9 @@ class secondViewController: UIViewController {
 //            action: "commitSelection"
 //        )
         
-        for _ in 0..<15 {
+    
+        //生成泡泡的數量
+        for _ in 0..<20 {
             let node = BubbleNode.instantiate()
             node.labelNode.text = String(arc4random()%100)
             floatingCollectionScene.addChild(node)
