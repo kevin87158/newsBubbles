@@ -54,10 +54,9 @@ class BubbleNode: SIFloatingNode {
             //let vcc = storyboard.instantiateViewControllerWithIdentifier("ViewController")
             
             
-            VC!.presentViewController(vc, animated: true, completion: nil)
+            VC!.presentViewController(vc, animated:true, completion: nil)
         
-            print(123)
-        return SKAction.scaleTo(1.3, duration: 0.2)
+        return SKAction.scaleTo(10, duration: 1)
         
     }
     

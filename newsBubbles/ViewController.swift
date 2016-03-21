@@ -21,9 +21,9 @@ class ViewController: UITabBarController{
         
         
         floatingCollectionScene = BubblesScene(size: skView.bounds.size)
-//        let navBarHeight = CGRectGetHeight(navigationController!.navigationBar.frame)
-//        let statusBarHeight = CGRectGetHeight(UIApplication.sharedApplication().statusBarFrame)
-//        floatingCollectionScene.topOffset = navBarHeight + statusBarHeight
+        let navBarHeight = CGRectGetHeight(navigationController!.navigationBar.frame)
+        let statusBarHeight = CGRectGetHeight(UIApplication.sharedApplication().statusBarFrame)
+        floatingCollectionScene.topOffset = navBarHeight + statusBarHeight
         skView.presentScene(floatingCollectionScene)
         
         
@@ -45,6 +45,10 @@ class ViewController: UITabBarController{
         
         
     }
+    
+
+    
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
