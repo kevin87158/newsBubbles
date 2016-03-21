@@ -20,18 +20,18 @@ class secondViewController: UIViewController {
         view.addSubview(skView)
         
         floatingCollectionScene = BubblesScene(size: skView.bounds.size)
-        let navBarHeight = CGRectGetHeight(navigationController!.navigationBar.frame)
-        let statusBarHeight = CGRectGetHeight(UIApplication.sharedApplication().statusBarFrame)
-        floatingCollectionScene.topOffset = navBarHeight + statusBarHeight
+//        let navBarHeight = CGRectGetHeight(navigationController!.navigationBar.frame)
+//        let statusBarHeight = CGRectGetHeight(UIApplication.sharedApplication().statusBarFrame)
+//        floatingCollectionScene.topOffset = navBarHeight + statusBarHeight
         skView.presentScene(floatingCollectionScene)
         
         
         // navigation item
-        navigationItem.rightBarButtonItem = UIBarButtonItem(
-            barButtonSystemItem: .Done,
-            target: self,
-            action: "commitSelection"
-        )
+//        navigationItem.rightBarButtonItem = UIBarButtonItem(
+//            barButtonSystemItem: .Done,
+//            target: self,
+//            action: "commitSelection"
+//        )
         
         for _ in 0..<20 {
             let node = BubbleNode.instantiate()

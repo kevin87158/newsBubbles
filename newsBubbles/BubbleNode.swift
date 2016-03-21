@@ -33,7 +33,7 @@ class BubbleNode: SIFloatingNode {
         
         node.labelNode.text = ""
         node.labelNode.position = CGPointZero
-        node.labelNode.fontColor = SKColor.whiteColor()
+        node.labelNode.fontColor = SKColor.blackColor()
         node.labelNode.fontSize = 10
         node.labelNode.userInteractionEnabled = false
         node.labelNode.verticalAlignmentMode = .Center
@@ -41,18 +41,18 @@ class BubbleNode: SIFloatingNode {
         node.addChild(node.labelNode)
     }
     
-        override func selectingAnimation() -> SKAction? {
+    override func selectingAnimation() -> SKAction? {
         removeActionForKey(BubbleNode.removingKey)
 
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             
-            let vc = storyboard.instantiateViewControllerWithIdentifier("thirdView")
+            let vc = storyboard.instantiateViewControllerWithIdentifier("thirdViewController")
             
-            let vcc = storyboard.instantiateViewControllerWithIdentifier("firstView")
+            let vcc = storyboard.instantiateViewControllerWithIdentifier("ViewController")
             
             vcc.presentViewController(vc, animated: true, completion: nil)
-//            self.navigationController!.pushViewController(self.storyboard!.instantiateViewControllerWithIdentifier("view2") as UIViewController, animated: true)
-                print(123)
+
+            print(123)
         return SKAction.scaleTo(1.3, duration: 0.2)
         
     }

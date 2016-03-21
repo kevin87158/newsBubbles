@@ -15,7 +15,7 @@
 		0A63BD821C8DED400093D39B /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A63BD811C8DED400093D39B /* SWRevealViewController.m */; };
 		0A63BD841C8DEF5B0093D39B /* backTableVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A63BD831C8DEF5B0093D39B /* backTableVc.swift */; };
 		0AA5B4171C9705760090D4E5 /* secondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA5B4161C9705760090D4E5 /* secondViewController.swift */; };
-		DD4E5D391C99374200289993 /* thirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4E5D381C99374200289993 /* thirdViewController.swift */; };
+		DD80B98F1C9BD4E200E12F7E /* thirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD80B98E1C9BD4E200E12F7E /* thirdViewController.swift */; };
 		DD97DD881C9695D300E40D47 /* SIFloatingCollectionScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD97DD871C9695D300E40D47 /* SIFloatingCollectionScene.swift */; };
 		DD97DD8A1C96960600E40D47 /* SIFloatingNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD97DD891C96960600E40D47 /* SIFloatingNode.swift */; };
 		DD97DD8C1C96968500E40D47 /* BubbleNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD97DD8B1C96968500E40D47 /* BubbleNode.swift */; };
@@ -35,7 +35,7 @@
 		0A63BD811C8DED400093D39B /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		0A63BD831C8DEF5B0093D39B /* backTableVc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = backTableVc.swift; sourceTree = "<group>"; };
 		0AA5B4161C9705760090D4E5 /* secondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = secondViewController.swift; sourceTree = "<group>"; };
-		DD4E5D381C99374200289993 /* thirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = thirdViewController.swift; sourceTree = "<group>"; };
+		DD80B98E1C9BD4E200E12F7E /* thirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = thirdViewController.swift; sourceTree = "<group>"; };
 		DD97DD871C9695D300E40D47 /* SIFloatingCollectionScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SIFloatingCollectionScene.swift; sourceTree = "<group>"; };
 		DD97DD891C96960600E40D47 /* SIFloatingNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SIFloatingNode.swift; sourceTree = "<group>"; };
 		DD97DD8B1C96968500E40D47 /* BubbleNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BubbleNode.swift; sourceTree = "<group>"; };
@@ -75,7 +75,7 @@
 				0A63BD6D1C8DE9B70093D39B /* AppDelegate.swift */,
 				0A63BD6F1C8DE9B70093D39B /* ViewController.swift */,
 				0AA5B4161C9705760090D4E5 /* secondViewController.swift */,
-				DD4E5D381C99374200289993 /* thirdViewController.swift */,
+				DD80B98E1C9BD4E200E12F7E /* thirdViewController.swift */,
 				0A63BD711C8DE9B70093D39B /* Main.storyboard */,
 				0A63BD741C8DE9B70093D39B /* Assets.xcassets */,
 				0A63BD761C8DE9B70093D39B /* LaunchScreen.storyboard */,
@@ -182,10 +182,10 @@
 			files = (
 				0A63BD701C8DE9B70093D39B /* ViewController.swift in Sources */,
 				0A63BD6E1C8DE9B70093D39B /* AppDelegate.swift in Sources */,
-				DD4E5D391C99374200289993 /* thirdViewController.swift in Sources */,
 				DD97DD8E1C9696AB00E40D47 /* BubblesScene.swift in Sources */,
 				DD97DD8C1C96968500E40D47 /* BubbleNode.swift in Sources */,
 				0A63BD841C8DEF5B0093D39B /* backTableVc.swift in Sources */,
+				DD80B98F1C9BD4E200E12F7E /* thirdViewController.swift in Sources */,
 				DD97DD881C9695D300E40D47 /* SIFloatingCollectionScene.swift in Sources */,
 				0A63BD821C8DED400093D39B /* SWRevealViewController.m in Sources */,
 				0AA5B4171C9705760090D4E5 /* secondViewController.swift in Sources */,

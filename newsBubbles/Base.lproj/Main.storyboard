@@ -74,28 +74,10 @@
             </objects>
             <point key="canvasLocation" x="248" y="1137"/>
         </scene>
-        <!--Third View Controller-->
-        <scene sceneID="v4D-1k-umg">
-            <objects>
-                <viewController storyboardIdentifier="thirdView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="2Nx-bL-Xcq" customClass="thirdViewController" customModule="newsBubbles" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="1UZ-b7-rOD"/>
-                        <viewControllerLayoutGuide type="bottom" id="DDS-fk-Y2C"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="7RF-cb-GUa">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="oQc-yz-10X" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1008" y="2587"/>
-        </scene>
         <!--View Controller-->
         <scene sceneID="n1N-t7-YWl">
             <objects>
-                <viewController storyboardIdentifier="firstView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="sW0-QK-hTm" customClass="ViewController" customModule="newsBubbles" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="sW0-QK-hTm" customClass="ViewController" customModule="newsBubbles" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="5DH-Nw-NYy"/>
                         <viewControllerLayoutGuide type="bottom" id="gsz-Jt-i8X"/>
@@ -117,17 +99,36 @@
                     </view>
                     <tabBarItem key="tabBarItem" selectedImage="filing-7" systemItem="mostViewed" id="6t3-DS-s1x"/>
                     <connections>
-                        <segue destination="2Nx-bL-Xcq" kind="show" id="mgD-uV-zRN"/>
+                        <segue destination="z1T-50-nNa" kind="modal" id="Sbg-ca-mHc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PpS-sv-D2b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1008" y="1809"/>
         </scene>
+        <!--Third View Controller-->
+        <scene sceneID="o0A-6S-EZb">
+            <objects>
+                <viewController storyboardIdentifier="thirdViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="z1T-50-nNa" customClass="thirdViewController" customModule="newsBubbles" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="5ki-V4-4bf"/>
+                        <viewControllerLayoutGuide type="bottom" id="psb-Jd-82L"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="c1j-BP-gr9">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="6Wk-EQ-NsY"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MH5-HB-pd3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1008" y="2778"/>
+        </scene>
         <!--Second View Controller-->
         <scene sceneID="AEZ-Ob-tbR">
             <objects>
-                <viewController storyboardIdentifier="secondViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="EA2-e2-xbb" customClass="secondViewController" customModule="newsBubbles" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="secondView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="EA2-e2-xbb" customClass="secondViewController" customModule="newsBubbles" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="0Wp-Qe-ZVq"/>
                         <viewControllerLayoutGuide type="bottom" id="WS4-dv-a1d"/>

@@ -98,7 +98,7 @@ class BubblesScene: SIFloatingCollectionScene {
                 if node.state == .Selected {
                     self.throwNode(
                         node,
-                        toPoint: CGPointMake(self.size.width / 2, self.size.height + 40),
+                        toPoint: CGPointMake(self.size.width / 2, self.size.height + 80),
                         completion: {
                             node.removeFromParent()
                         }
