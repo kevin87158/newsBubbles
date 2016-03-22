@@ -126,7 +126,7 @@ class thirdViewController: UIViewController,UITableViewDelegate,UITableViewDataS
     
     //table view
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 100
+        return 50
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
