@@ -18,6 +18,7 @@ class secondViewController: UIViewController {
         
         
         skView = SKView(frame: UIScreen.mainScreen().bounds)
+//        skView = SKView(frame:CGRect(x: 10, y: 10, width: self.view.frame.size.width/3, height: self.view.frame.size.height/3))
         skView.backgroundColor = SKColor.whiteColor()
         view.addSubview(skView)
         

@@ -20,8 +20,8 @@ extension CGFloat {
 }
 
 class BubblesScene: SIFloatingCollectionScene {
-    var bottomOffset: CGFloat = 50
-    var topOffset: CGFloat = 50
+    var bottomOffset: CGFloat = 10
+    var topOffset: CGFloat = 10
     
     override func didMoveToView(view: SKView) {
         super.didMoveToView(view)
@@ -38,7 +38,7 @@ class BubblesScene: SIFloatingCollectionScene {
         bodyFrame.size.height = frame.size.height - bottomOffset
         bodyFrame.origin.y = frame.size.height - bodyFrame.size.height - topOffset
         physicsBody = SKPhysicsBody(edgeLoopFromRect: bodyFrame)
-        magneticField.position = CGPointMake(frame.size.width / 2, frame.size.height / 2 + bottomOffset / 2 - topOffset)
+        magneticField.position = CGPointMake(frame.size.width / 8, frame.size.height / 2 + bottomOffset / 2 - topOffset)
     }
     
     override func addChild(node: SKNode) {
@@ -98,7 +98,7 @@ class BubblesScene: SIFloatingCollectionScene {
                 if node.state == .Selected {
                     self.throwNode(
                         node,
-                        toPoint: CGPointMake(self.size.width / 2, self.size.height + 80),
+                        toPoint: CGPointMake(self.size.width / 800, self.size.height + 80),
                         completion: {
                             node.removeFromParent()
                         }
