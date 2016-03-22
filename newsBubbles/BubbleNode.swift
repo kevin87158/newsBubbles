@@ -27,8 +27,8 @@ class BubbleNode: SIFloatingNode {
         node.physicsBody = SKPhysicsBody(circleOfRadius: radius + 2)
         //泡泡顏色
 //        node.fillColor = SKColor(hue: 20/240.0, saturation: 10/240.0, brightness: 3/240.0, alpha: 0.3)
-        node.fillColor = SKColor(hue: 50.8, saturation: 0.912, brightness: 1.000, alpha: 0.3)
-      
+//        node.fillColor = SKColor(hue: 218.5, saturation: 0.5781, brightness: 0.9294, alpha: 1)
+      node.fillColor = UIColor(white: 	000, alpha: 0.3)
 
         node.strokeColor = node.fillColor
         

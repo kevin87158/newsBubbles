@@ -16,13 +16,14 @@ class thirdViewController: UIViewController {
     
     //    @IBOutlet weak var slideBar: UIBarButtonItem!  //滑動列
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         print("thirdView")
         
                 skView = SKView(frame: UIScreen.mainScreen().applicationFrame)
-                skView.backgroundColor = SKColor.blueColor()
+                skView.backgroundColor = SKColor.whiteColor()
                 view.addSubview(skView)
 
                 floatingCollectionScene = BubblesScene(size: skView.bounds.size)
@@ -44,23 +45,23 @@ class thirdViewController: UIViewController {
 //                    action: "commitSelection"
 //                )
     //第二種
-        //        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil)
-        //        title = "返回上一頁
+//                navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil)
+//                title = "返回上一頁"
 
     //第三種
-        let button:UIButton = UIButton()
-        
-        button.frame = CGRectMake(0, 0, 22, 22)
-        
-        button.addTarget(self, action: "back:", forControlEvents: UIControlEvents.TouchUpInside)  //back
-        
-        let leftItem: UIBarButtonItem = UIBarButtonItem()
-        
-        leftItem.style = .Plain
-        leftItem.title = "返回"
-        
-        self.navigationItem.leftBarButtonItem = leftItem
-        
+//        let button:UIButton = UIButton()
+//        
+//        button.frame = CGRectMake(0, 0, 22, 22)
+//        
+//        button.addTarget(self, action: "back:", forControlEvents: UIControlEvents.TouchUpInside)  //back
+//        
+//        let leftItem: UIBarButtonItem = UIBarButtonItem()
+//        
+//        leftItem.style = .Plain
+//        leftItem.title = "返回"
+//        
+//        self.navigationItem.leftBarButtonItem = leftItem
+//        
         
         
         

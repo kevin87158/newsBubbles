@@ -8,7 +8,6 @@
         <!--Navigation Controller-->
         <scene sceneID="lOZ-wc-y1c">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="3b7-9i-a9v" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="rzb-G4-Q5e" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Cfh-bc-zb5">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -18,6 +17,7 @@
                         <segue destination="goI-gB-my2" kind="relationship" relationship="rootViewController" id="Hig-Au-Q2m"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3b7-9i-a9v" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1015" y="1037"/>
         </scene>
@@ -73,7 +73,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" id="6Wk-EQ-NsY"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MH5-HB-pd3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
