@@ -143,6 +143,7 @@ class thirdViewController: UIViewController,UITableViewDelegate,UITableViewDataS
         dispatch_async(dispatch_get_main_queue()) { () -> Void in
         cell.setCell(self.posts.objectAtIndex(indexPath.row).valueForKey("title") as! NSString as String, setDate: self.posts.objectAtIndex(indexPath.row).valueForKey("date") as! NSString as String, setSource: self.posts.objectAtIndex(indexPath.row).valueForKey("source") as! String, setImg: self.imageArray.objectAtIndex(indexPath.row) as! String)
         }
+
         return cell
         
     }
@@ -156,9 +157,9 @@ class thirdViewController: UIViewController,UITableViewDelegate,UITableViewDataS
     //parser
     
     //開始parse
-    func parser(parser: NSXMLParser!, foundCharacters string: String!){  //每次parse都會做一遍
+    func parser(parser: NSXMLParser, foundCharacters string: String){  //每次parse都會做一遍
         
-        //        print("parse start")
+                print("parse start")
         if element.isEqualToString("title") {  //標題
             title1.appendString(string)
         } else if element.isEqualToString("pubDate") {  //時間
@@ -198,7 +199,7 @@ class thirdViewController: UIViewController,UITableViewDelegate,UITableViewDataS
     
     
     //標籤結束
-    func parser(parser: NSXMLParser!, didEndElement elementName: String!, namespaceURI: String!, qualifiedName qName: String!){
+    func parser(parser: NSXMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?){
         
         if (elementName as NSString).isEqualToString("item") {
             if !title1.isEqual(nil) {
@@ -228,7 +229,7 @@ class thirdViewController: UIViewController,UITableViewDelegate,UITableViewDataS
             
         }
 //        print(elements)
-                tbData!.reloadData()  //更新tableView資料
+//                tbData!.reloadData()  //更新tableView資料
     }
     
     
@@ -284,21 +285,22 @@ class thirdViewController: UIViewController,UITableViewDelegate,UITableViewDataS
         posts = []
         url = urlstring
 //        url = "https://tw.news.yahoo.com/rss/"
-        do{
-            try parser = NSXMLParser(contentsOfURL:(NSURL(string:url))!)!
-        }catch{
-            
+//        do{
+//            try
+                parser = NSXMLParser(contentsOfURL:(NSURL(string:url))!)!
+//        }catch{
+//            
             // create the alert
-            let connetError = UIAlertController(title: nil, message: "連線失敗, 請先檢查是否連線", preferredStyle: UIAlertControllerStyle.Alert)
-            // add an action (button)
-            connetError.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
-            // show the alert
-            self.presentViewController(connetError, animated: true, completion: nil)
-            
-        }
+//            let connetError = UIAlertController(title: nil, message: "連線失敗, 請先檢查是否連線", preferredStyle: UIAlertControllerStyle.Alert)
+//            // add an action (button)
+//            connetError.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+//            // show the alert
+//            self.presentViewController(connetError, animated: true, completion: nil)
+        
+//        }
         parser.delegate = self
         
-        print("start parse")
+        print("being parse")
         parser.parse()   //將資料丟給 parse處理
         tbData!.reloadData()  //更新tableView資料
     }
