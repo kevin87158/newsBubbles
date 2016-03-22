@@ -43,7 +43,7 @@ class ViewController: UITabBarController{
 
         let node1 = BubbleNode.instantiate()
         node1.VC = self
-        node1.labelNode.text = "政治新聞"
+        node1.labelNode.text = "政治"
         node1.labelNode.name = "政治新聞"
         floatingCollectionScene.addChild(node1)
         

@@ -34,8 +34,7 @@ class thirdViewController: UIViewController,UITableViewDelegate,UITableViewDataS
     override func viewDidLoad() {
         super.viewDidLoad()
 
-      
-        
+
           
 //                skView = SKView(frame: UIScreen.mainScreen().applicationFrame)
 //                skView.backgroundColor = SKColor.blueColor()
@@ -83,10 +82,6 @@ class thirdViewController: UIViewController,UITableViewDelegate,UITableViewDataS
 //        
 //        self.navigationItem.leftBarButtonItem = leftItem
 
-        
-        
-        
-        
         //印出泡泡
 //                for _ in 0..<15 {
 //                    let node = BubbleNode.instantiate()
@@ -96,7 +91,7 @@ class thirdViewController: UIViewController,UITableViewDelegate,UITableViewDataS
 //
 //      
         
-
+        chooseUrl()
         tbData.delegate = self
         tbData.dataSource = self
 
@@ -110,89 +105,13 @@ class thirdViewController: UIViewController,UITableViewDelegate,UITableViewDataS
     override func viewDidAppear(animated: Bool) {
         print("thirdView")
         
-        
+        tbData!.reloadData()  //更新tableView資料
 //        if (temp.catgory) == "即時新聞"{
 //            print("第三頁抓到了新聞 嗚嗚")
 //        }
         
         
-        switch temp.catgory{
-        case "即時新聞":
-            let rssSite:String = "https://tw.news.yahoo.com/rss/"
-                beginParsing(rssSite)
-            break
-            
-        case "政治新聞":
-            let rssSite:String = "https://tw.news.yahoo.com/rss/politics"
-            beginParsing(rssSite)
-            break
-            
-        case "地方新聞":
-            let rssSite:String = "https://tw.news.yahoo.com/rss/local"
-            beginParsing(rssSite)
-            break
-            
-        case "科技新聞":
-            let rssSite:String = "https://tw.news.yahoo.com/rss/technology"
-            beginParsing(rssSite)
-            break
-            
-        case "體育新聞":
-            let rssSite:String = "https://tw.news.yahoo.com/rss/sports"
-            beginParsing(rssSite)
-            break
-            
-        case "教育新聞":
-            let rssSite:String = "https://tw.news.yahoo.com/rss/education"
-            beginParsing(rssSite)
-            break
-            
-        case "即時新聞":
-            let rssSite:String = "https://tw.news.yahoo.com/rss/"
-            beginParsing(rssSite)
-            break
-            
-        case "民生新聞":
-            let rssSite:String = "https://tw.news.yahoo.com/rss/lifestyle"
-            beginParsing(rssSite)
-            break
-            
-        case "影劇新聞":
-            let rssSite:String = "https://tw.news.yahoo.com/rss/entertainment"
-            beginParsing(rssSite)
-            break
-            
-        case "社會新聞":
-            let rssSite:String = "https://tw.news.yahoo.com/rss/society"
-            beginParsing(rssSite)
-            break
-            
-        case "國際新聞":
-            let rssSite:String = "https://tw.news.yahoo.com/rss/world"
-            beginParsing(rssSite)
-            break
-            
-        case "財經新聞":
-            let rssSite:String = "https://tw.news.yahoo.com/rss/finance"
-            beginParsing(rssSite)
-            break
-            
-        case "健康新聞":
-            let rssSite:String = "https://tw.news.yahoo.com/rss/health"
-            beginParsing(rssSite)
-            break
-            
-        case "藝文新聞":
-            let rssSite:String = "https://tw.news.yahoo.com/rss/art"
-            beginParsing(rssSite)
-            break
-            
-        default:"旅遊新聞"
-            let rssSite:String = "https://tw.travel.yahoo.com/rss/topic/taiwan/all#"
-            beginParsing(rssSite)
-            break
-        }
-        
+      
 
         
     }
@@ -220,8 +139,10 @@ class thirdViewController: UIViewController,UITableViewDelegate,UITableViewDataS
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell:myTableViewCell = tableView.dequeueReusableCellWithIdentifier("Cell",forIndexPath: indexPath)  as! myTableViewCell
         
-        cell.setCell(posts.objectAtIndex(indexPath.row).valueForKey("title") as! NSString as String, setDate: posts.objectAtIndex(indexPath.row).valueForKey("date") as! NSString as String, setSource: posts.objectAtIndex(indexPath.row).valueForKey("source") as! String, setImg: imageArray.objectAtIndex(indexPath.row) as! String)
-        
+
+        dispatch_async(dispatch_get_main_queue()) { () -> Void in
+        cell.setCell(self.posts.objectAtIndex(indexPath.row).valueForKey("title") as! NSString as String, setDate: self.posts.objectAtIndex(indexPath.row).valueForKey("date") as! NSString as String, setSource: self.posts.objectAtIndex(indexPath.row).valueForKey("source") as! String, setImg: self.imageArray.objectAtIndex(indexPath.row) as! String)
+        }
         return cell
         
     }
@@ -282,30 +203,32 @@ class thirdViewController: UIViewController,UITableViewDelegate,UITableViewDataS
         if (elementName as NSString).isEqualToString("item") {
             if !title1.isEqual(nil) {
                 elements.setObject(title1, forKey: "title")
-//                                print(title1)
+                                print(title1)
             }
             if !date.isEqual(nil) {
                 elements.setObject(date, forKey: "date")
-//                                print(date)
+                                print(date)
             }
             if !link.isEqual(nil) {
                 elements.setObject(link, forKey: "link")
-//                                    print(link)
+                                    print(link)
             }
             if !source.isEqual(nil) {
                 elements.setObject(source, forKey: "source")
-//                                                print(source)
+                                                print(source)
             }
             if !img.isEqual(nil) {
                 elements.setObject(img, forKey: "description")
                 targetString = ""
                 getimg(img as String)
+                print(img)
                 
             }
             posts.addObject(elements)  //將資料存入object 中
             
         }
-        
+//        print(elements)
+                tbData!.reloadData()  //更新tableView資料
     }
     
     
@@ -380,7 +303,103 @@ class thirdViewController: UIViewController,UITableViewDelegate,UITableViewDataS
         tbData!.reloadData()  //更新tableView資料
     }
 
-    
+    func chooseUrl(){
+
+        print(temp.catgory)
+        switch temp.catgory{
+        case "即時新聞":
+            let rssSite:String = "https://tw.news.yahoo.com/rss/"
+            beginParsing(rssSite)
+            print(temp.catgory)
+            break
+            
+        case "政治新聞":
+            let rssSite:String = "https://tw.news.yahoo.com/rss/politics"
+            print(temp.catgory)
+            beginParsing(rssSite)
+            break
+            
+        case "地方新聞":
+            let rssSite:String = "https://tw.news.yahoo.com/rss/local"
+            beginParsing(rssSite)
+            print(temp.catgory)
+            break
+            
+        case "科技新聞":
+            let rssSite:String = "https://tw.news.yahoo.com/rss/technology"
+            beginParsing(rssSite)
+            print(temp.catgory)
+            break
+            
+        case "體育新聞":
+            let rssSite:String = "https://tw.news.yahoo.com/rss/sports"
+            beginParsing(rssSite)
+            print(temp.catgory)
+            break
+            
+        case "教育新聞":
+            let rssSite:String = "https://tw.news.yahoo.com/rss/education"
+            beginParsing(rssSite)
+            print(temp.catgory)
+            break
+            
+        case "即時新聞":
+            let rssSite:String = "https://tw.news.yahoo.com/rss/"
+            beginParsing(rssSite)
+            print(temp.catgory)
+            break
+            
+        case "民生新聞":
+            let rssSite:String = "https://tw.news.yahoo.com/rss/lifestyle"
+            beginParsing(rssSite)
+            print(temp.catgory)
+            break
+            
+        case "影劇新聞":
+            let rssSite:String = "https://tw.news.yahoo.com/rss/entertainment"
+            beginParsing(rssSite)
+            print(temp.catgory)
+            break
+            
+        case "社會新聞":
+            let rssSite:String = "https://tw.news.yahoo.com/rss/society"
+            beginParsing(rssSite)
+            print(temp.catgory)
+            break
+            
+        case "國際新聞":
+            let rssSite:String = "https://tw.news.yahoo.com/rss/world"
+            beginParsing(rssSite)
+            print(temp.catgory)
+            break
+            
+        case "財經新聞":
+            let rssSite:String = "https://tw.news.yahoo.com/rss/finance"
+            beginParsing(rssSite)
+            print(temp.catgory)
+            break
+            
+        case "健康新聞":
+            let rssSite:String = "https://tw.news.yahoo.com/rss/health"
+            beginParsing(rssSite)
+            print(temp.catgory)
+            break
+            
+        case "藝文新聞":
+            let rssSite:String = "https://tw.news.yahoo.com/rss/art"
+            beginParsing(rssSite)
+            print(temp.catgory)
+            break
+            
+        default:"旅遊新聞"
+        let rssSite:String = "https://tw.travel.yahoo.com/rss/topic/taiwan/all#"
+        beginParsing(rssSite)
+        print(temp.catgory)
+            break
+        }
+        print(temp.catgory)
+
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
