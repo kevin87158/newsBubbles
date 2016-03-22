@@ -105,8 +105,6 @@ class thirdViewController: UIViewController,UITableViewDelegate,UITableViewDataS
  
     override func viewDidAppear(animated: Bool) {
         print("thirdView")
-        
-        tbData!.reloadData()  //更新tableView資料
 //        if (temp.catgory) == "即時新聞"{
 //            print("第三頁抓到了新聞 嗚嗚")
 //        }
