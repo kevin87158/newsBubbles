@@ -36,7 +36,15 @@ class thirdViewController: UIViewController,UITableViewDelegate,UITableViewDataS
 
         print("thirdView")
         
-
+        
+        if (valueForKey("即時新聞") as! String) == "即時新聞"{
+                print("第三頁抓到了新聞")
+        }
+        
+//        if (self.valueForKey("即時新聞")as! String) == "即時新聞"{
+//        print("第三頁抓到了新聞")
+//        }
+        
 //                skView = SKView(frame: UIScreen.mainScreen().applicationFrame)
 //                skView.backgroundColor = SKColor.blueColor()
 //                view.addSubview(skView)
@@ -273,6 +281,9 @@ class thirdViewController: UIViewController,UITableViewDelegate,UITableViewDataS
     
     func beginParsing(){
         posts = []
+        
+        
+        
         url = "https://tw.news.yahoo.com/rss/"
         do{
             try parser = NSXMLParser(contentsOfURL:(NSURL(string:url))!)!
