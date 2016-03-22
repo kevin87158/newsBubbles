@@ -92,6 +92,7 @@ class thirdViewController: UIViewController,UITableViewDelegate,UITableViewDataS
 //      
         
         chooseUrl()
+        tbData!.reloadData()  //更新tableView資料
         tbData.delegate = self
         tbData.dataSource = self
 
@@ -302,7 +303,7 @@ class thirdViewController: UIViewController,UITableViewDelegate,UITableViewDataS
         
         print("being parse")
         parser.parse()   //將資料丟給 parse處理
-        tbData!.reloadData()  //更新tableView資料
+
     }
 
     func chooseUrl(){
