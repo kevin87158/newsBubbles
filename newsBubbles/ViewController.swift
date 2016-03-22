@@ -33,12 +33,21 @@ class ViewController: UITabBarController{
 
         
         
-        for _ in 0..<15 {
+//        for _ in 0..<15 {
+//            let node = BubbleNode.instantiate()
+//            node.VC = self
+//            node.labelNode.text = String(arc4random()%15)
+//            floatingCollectionScene.addChild(node)
+//        }
+        
+//        for x in 0..<15 {
             let node = BubbleNode.instantiate()
             node.VC = self
             node.labelNode.text = String(arc4random()%15)
+
+            node.labelNode.name = "test"
             floatingCollectionScene.addChild(node)
-        }
+//        }
         
         
         

@@ -30,14 +30,18 @@ class thirdViewController: UIViewController,UITableViewDelegate,UITableViewDataS
     var imageArray = NSMutableArray()
     var myWebView = UIWebView()
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         print("thirdView")
         
+
 //                skView = SKView(frame: UIScreen.mainScreen().applicationFrame)
 //                skView.backgroundColor = SKColor.blueColor()
 //                view.addSubview(skView)
+
+            
 
 //                floatingCollectionScene = BubblesScene(size: skView.bounds.size)
 //                let navBarHeight = CGRectGetHeight(navigationController!.navigationBar.frame)
@@ -59,7 +63,11 @@ class thirdViewController: UIViewController,UITableViewDelegate,UITableViewDataS
 //                )
     //第二種
 //                navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil)
+
 //                title = "返回"
+
+//                title = "返回上一頁"
+
 
     //第三種
 //        let button:UIButton = UIButton()
@@ -74,6 +82,7 @@ class thirdViewController: UIViewController,UITableViewDelegate,UITableViewDataS
 //        leftItem.title = "返回"
 //        
 //        self.navigationItem.leftBarButtonItem = leftItem
+
         
         
         
@@ -90,6 +99,9 @@ class thirdViewController: UIViewController,UITableViewDelegate,UITableViewDataS
         beginParsing()
         tbData.delegate = self
         tbData.dataSource = self
+
+//        
+
         
     }
     
