@@ -34,17 +34,9 @@ class thirdViewController: UIViewController,UITableViewDelegate,UITableViewDataS
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        print("thirdView")
+      
         
-        
-        if (valueForKey("即時新聞") as! String) == "即時新聞"{
-                print("第三頁抓到了新聞")
-        }
-        
-//        if (self.valueForKey("即時新聞")as! String) == "即時新聞"{
-//        print("第三頁抓到了新聞")
-//        }
-        
+          
 //                skView = SKView(frame: UIScreen.mainScreen().applicationFrame)
 //                skView.backgroundColor = SKColor.blueColor()
 //                view.addSubview(skView)
@@ -104,7 +96,7 @@ class thirdViewController: UIViewController,UITableViewDelegate,UITableViewDataS
 //
 //      
         
-        beginParsing()
+
         tbData.delegate = self
         tbData.dataSource = self
 
@@ -116,6 +108,92 @@ class thirdViewController: UIViewController,UITableViewDelegate,UITableViewDataS
     
  
     override func viewDidAppear(animated: Bool) {
+        print("thirdView")
+        
+        
+//        if (temp.catgory) == "即時新聞"{
+//            print("第三頁抓到了新聞 嗚嗚")
+//        }
+        
+        
+        switch temp.catgory{
+        case "即時新聞":
+            let rssSite:String = "https://tw.news.yahoo.com/rss/"
+                beginParsing(rssSite)
+            break
+            
+        case "政治新聞":
+            let rssSite:String = "https://tw.news.yahoo.com/rss/politics"
+            beginParsing(rssSite)
+            break
+            
+        case "地方新聞":
+            let rssSite:String = "https://tw.news.yahoo.com/rss/local"
+            beginParsing(rssSite)
+            break
+            
+        case "科技新聞":
+            let rssSite:String = "https://tw.news.yahoo.com/rss/technology"
+            beginParsing(rssSite)
+            break
+            
+        case "體育新聞":
+            let rssSite:String = "https://tw.news.yahoo.com/rss/sports"
+            beginParsing(rssSite)
+            break
+            
+        case "教育新聞":
+            let rssSite:String = "https://tw.news.yahoo.com/rss/education"
+            beginParsing(rssSite)
+            break
+            
+        case "即時新聞":
+            let rssSite:String = "https://tw.news.yahoo.com/rss/"
+            beginParsing(rssSite)
+            break
+            
+        case "民生新聞":
+            let rssSite:String = "https://tw.news.yahoo.com/rss/lifestyle"
+            beginParsing(rssSite)
+            break
+            
+        case "影劇新聞":
+            let rssSite:String = "https://tw.news.yahoo.com/rss/entertainment"
+            beginParsing(rssSite)
+            break
+            
+        case "社會新聞":
+            let rssSite:String = "https://tw.news.yahoo.com/rss/society"
+            beginParsing(rssSite)
+            break
+            
+        case "國際新聞":
+            let rssSite:String = "https://tw.news.yahoo.com/rss/world"
+            beginParsing(rssSite)
+            break
+            
+        case "財經新聞":
+            let rssSite:String = "https://tw.news.yahoo.com/rss/finance"
+            beginParsing(rssSite)
+            break
+            
+        case "健康新聞":
+            let rssSite:String = "https://tw.news.yahoo.com/rss/health"
+            beginParsing(rssSite)
+            break
+            
+        case "藝文新聞":
+            let rssSite:String = "https://tw.news.yahoo.com/rss/art"
+            beginParsing(rssSite)
+            break
+            
+        default:"旅遊新聞"
+            let rssSite:String = "https://tw.travel.yahoo.com/rss/topic/taiwan/all#"
+            beginParsing(rssSite)
+            break
+        }
+        
+
         
     }
     
@@ -279,12 +357,10 @@ class thirdViewController: UIViewController,UITableViewDelegate,UITableViewDataS
         return targetString
     }
     
-    func beginParsing(){
+    func beginParsing(urlstring:String){
         posts = []
-        
-        
-        
-        url = "https://tw.news.yahoo.com/rss/"
+        url = urlstring
+//        url = "https://tw.news.yahoo.com/rss/"
         do{
             try parser = NSXMLParser(contentsOfURL:(NSURL(string:url))!)!
         }catch{

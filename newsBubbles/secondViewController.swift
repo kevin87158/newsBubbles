@@ -27,24 +27,12 @@ class secondViewController: UIViewController {
         floatingCollectionScene.topOffset = navBarHeight + statusBarHeight
         skView.presentScene(floatingCollectionScene)
         
-
-        
-        //生成泡泡的數量
-//        for _ in 0..<15 {
-//            let node = BubbleNode.instantiate()
-//            node.labelNode.text = String(arc4random()%100)
-//            
-//            
-//            floatingCollectionScene.addChild(node)
-//        }
-
-        for x in 1...5 {
+//        for x in 1...5 {
+        //生成泡泡
             let node = BubbleNode.instantiate()
             node.labelNode.text = String(arc4random()%100)
-            node.childNodeWithName("\(x)")
-            print(node.childNodeWithName("\(x)"))
             floatingCollectionScene.addChild(node)
-        }
+//        }
    
     }
 

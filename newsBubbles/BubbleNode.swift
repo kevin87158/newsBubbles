@@ -61,69 +61,85 @@ class BubbleNode: SIFloatingNode{
         switch self.labelNode.name!{
             
         case "即時新聞":
-                self.valueForKey("即時新聞")
-                
+                temp.catgory = "即時新聞"
+                print(temp.catgory)
                 print("即時新聞")
             break
             
         case "政治新聞":
+                temp.catgory = "政治新聞"
                 print("政治新聞")
             break
             
         case "地方新聞" :
-                            print("地方新聞")
+                temp.catgory = "地方新聞"
+                print("地方新聞")
             break
             
         case "科技新聞" :
-                            print("科技新聞")
+                temp.catgory = "科技新聞"
+                print("科技新聞")
             break
         
         case "體育新聞" :
-                            print("體育新聞")
+            temp.catgory = "體育新聞"
+            print("體育新聞")
             break
             
         case "教育新聞" :
-                            print("教育新聞")
+            temp.catgory = "教育新聞"
+            print("教育新聞")
             break
       
         case "民生新聞" :
-                            print("民生新聞")
-            
+            temp.catgory = "民生新聞"
+            print("民生新聞")
             break
             
         case "影劇新聞" :
-                            print("影劇新聞")
+            temp.catgory = "影劇新聞"
+            print("影劇新聞")
             break
             
         case "社會新聞" :
-                            print("社會新聞")
+            temp.catgory = "社會新聞"
+            print("社會新聞")
             break
             
         case "國際新聞" :
-                            print("國際新聞")
+            temp.catgory = "國際新聞"
+            print("國際新聞")
             break
             
         case "財經新聞" :
-                            print("財經新聞")
+            temp.catgory = "財經新聞"
+            print("財經新聞")
             break
             
         case "社會新聞" :
-                            print("社會新聞")
+            temp.catgory = "社會新聞"
+            print("社會新聞")
             break
             
         case "健康新聞" :
-                            print("健康新聞")
+            temp.catgory = "健康新聞"
+            print("健康新聞")
             break
             
         case "藝文新聞" :
-                            print("藝文新聞")
+            temp.catgory = "藝文新聞"
+            print("藝文新聞")
             break
             
         case "旅遊新聞" :
-                            print("旅遊新聞")
+            temp.catgory = "旅遊新聞新聞"
+            print("旅遊新聞")
             break
             
         default:
+            temp.catgory = "即時新聞"
+            print(temp.catgory)
+            print("即時新聞")
             break
             
         }
