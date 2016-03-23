@@ -44,115 +44,111 @@ class BubbleNode: SIFloatingNode{
     
     override func selectingAnimation() -> SKAction? {
         removeActionForKey(BubbleNode.removingKey)
-//        
+//
         switch self.labelNode.name!{
-            
         case "即時新聞":
                 temp.catgory = "即時新聞"
-                print(temp.catgory)
-                print("即時新聞")
+                print("泡泡選擇:即時新聞")
                 showTableView()
+             
             break
             
         case "政治新聞":
                 temp.catgory = "政治新聞"
-                print("政治新聞")
+                print("泡泡選擇:新聞")
                 showTableView()
             break
             
         case "地方新聞" :
                 temp.catgory = "地方新聞"
-                print("地方新聞")
+                print("泡泡選擇:地方新聞")
                 showTableView()
             break
             
         case "科技新聞" :
                 temp.catgory = "科技新聞"
-                print("科技新聞")
+                print("泡泡選擇:科技新聞")
                 showTableView()
             break
         
         case "體育新聞" :
             temp.catgory = "體育新聞"
-            print("體育新聞")
+            print("泡泡選擇:體育新聞")
             showTableView()
             break
             
         case "教育新聞" :
             temp.catgory = "教育新聞"
-            print("教育新聞")
+            print("泡泡選擇:教育新聞")
             showTableView()
             break
       
         case "民生新聞" :
             temp.catgory = "民生新聞"
-            print("民生新聞")
+            print("泡泡選擇:民生新聞")
             showTableView()
             break
             
         case "影劇新聞" :
             temp.catgory = "影劇新聞"
-            print("影劇新聞")
+            print("泡泡選擇:影劇新聞")
             showTableView()
             break
             
         case "社會新聞" :
             temp.catgory = "社會新聞"
-            print("社會新聞")
+            print("泡泡選擇:社會新聞")
             showTableView()
             break
             
         case "國際新聞" :
             temp.catgory = "國際新聞"
-            print("國際新聞")
+            print("泡泡選擇:國際新聞")
             showTableView()
             break
             
         case "財經新聞" :
             temp.catgory = "財經新聞"
-            print("財經新聞")
+            print("泡泡選擇:財經新聞")
             showTableView()
             break
             
         case "社會新聞" :
             temp.catgory = "社會新聞"
-            print("社會新聞")
+            print("泡泡選擇:社會新聞")
             showTableView()
             break
             
         case "健康新聞" :
             temp.catgory = "健康新聞"
-            print("健康新聞")
+            print("泡泡選擇:健康新聞")
             showTableView()
             break
             
         case "藝文新聞" :
             temp.catgory = "藝文新聞"
-            print("藝文新聞")
+            print("泡泡選擇:藝文新聞")
             showTableView()
             break
             
         case "旅遊新聞" :
             temp.catgory = "旅遊新聞"
-            print("旅遊新聞")
+            print("泡泡選擇:旅遊新聞")
             showTableView()
             break
             
         default:
             temp.catgory = "即時新聞"
-            print(temp.catgory)
-            print("即時新聞")
+            print("泡泡選擇:即時新聞")
             showTableView()
             break
             
         }
-        print("change page ")
-        return SKAction.scaleTo(1, duration: 1)
+        print("goto  tableViewpage ")
+        return SKAction.scaleTo(1.2, duration: 1)
 
     }
     
-    
- 
     override func normalizeAnimation() -> SKAction? {
         removeActionForKey(BubbleNode.removingKey)
         
@@ -168,9 +164,11 @@ class BubbleNode: SIFloatingNode{
 //    
 //        let thirdViewController = self.storyboard.instantiateViewControllerWithIdentifier("thirdViewController")
 //        
+        
         let gotoThirdViewController = self.VC?.storyboard?.instantiateViewControllerWithIdentifier("thirdViewController")
         self.VC?.navigationController?.pushViewController(gotoThirdViewController!, animated: true)
-        
+//        let title = self.VC?.storyboard?.instantiateViewControllerWithIdentifier("thirdViewController")
+//        title?.navigationItem.title = "即時新聞"
     }
 
 

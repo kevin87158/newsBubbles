@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A01EC021CA2CE8100F18431 /* webView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A01EC011CA2CE8100F18431 /* webView.swift */; };
 		0A63BD6E1C8DE9B70093D39B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A63BD6D1C8DE9B70093D39B /* AppDelegate.swift */; };
 		0A63BD701C8DE9B70093D39B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A63BD6F1C8DE9B70093D39B /* ViewController.swift */; };
 		0A63BD731C8DE9B70093D39B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A63BD711C8DE9B70093D39B /* Main.storyboard */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0A01EC011CA2CE8100F18431 /* webView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = webView.swift; sourceTree = "<group>"; };
 		0A63BD6A1C8DE9B70093D39B /* newsBubbles.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = newsBubbles.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A63BD6D1C8DE9B70093D39B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0A63BD6F1C8DE9B70093D39B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -82,6 +84,7 @@
 				DD80B98E1C9BD4E200E12F7E /* thirdViewController.swift */,
 				0A7FBEE61CA0DE5F005772FE /* myTableViewCell.swift */,
 				0A7FBF081CA1262F005772FE /* temp.swift */,
+				0A01EC011CA2CE8100F18431 /* webView.swift */,
 				0A63BD711C8DE9B70093D39B /* Main.storyboard */,
 				0A63BD741C8DE9B70093D39B /* Assets.xcassets */,
 				0A63BD761C8DE9B70093D39B /* LaunchScreen.storyboard */,
@@ -191,6 +194,7 @@
 				DD97DD8E1C9696AB00E40D47 /* BubblesScene.swift in Sources */,
 				0A7FBEE71CA0DE5F005772FE /* myTableViewCell.swift in Sources */,
 				DD97DD8C1C96968500E40D47 /* BubbleNode.swift in Sources */,
+				0A01EC021CA2CE8100F18431 /* webView.swift in Sources */,
 				0A63BD841C8DEF5B0093D39B /* backTableVc.swift in Sources */,
 				DD80B98F1C9BD4E200E12F7E /* thirdViewController.swift in Sources */,
 				DD97DD881C9695D300E40D47 /* SIFloatingCollectionScene.swift in Sources */,

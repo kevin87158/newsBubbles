@@ -10,8 +10,8 @@ import UIKit
 import SpriteKit
 
 class thirdViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,NSXMLParserDelegate{
-//    private var skView: SKView!
-//    private var floatingCollectionScene: BubblesScene!
+    private var skView: SKView!
+    private var floatingCollectionScene: BubblesScene!
     
     @IBOutlet weak var tbData: UITableView!
     
@@ -35,13 +35,13 @@ class thirdViewController: UIViewController,UITableViewDelegate,UITableViewDataS
         super.viewDidLoad()
 
 
-          
+       
 //                skView = SKView(frame: UIScreen.mainScreen().applicationFrame)
 //                skView.backgroundColor = SKColor.blueColor()
 //                view.addSubview(skView)
-
-            
-
+//
+//            
+//
 //                floatingCollectionScene = BubblesScene(size: skView.bounds.size)
 //                let navBarHeight = CGRectGetHeight(navigationController!.navigationBar.frame)
 //                let statusBarHeight = CGRectGetHeight(UIApplication.sharedApplication().statusBarFrame)
@@ -60,42 +60,32 @@ class thirdViewController: UIViewController,UITableViewDelegate,UITableViewDataS
 //                    target: self,
 //                    action: "commitSelection"
 //                )
+
     //第二種
 //                navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil)
-//
 //                title = "返回"
-//
-//                title = "返回上一頁"
 
 
-    //第三種
-//        let button:UIButton = UIButton()
-//        
-//        button.frame = CGRectMake(0, 0, 22, 22)
-//        
-//        button.addTarget(self, action: "back:", forControlEvents: UIControlEvents.TouchUpInside)  //back
-//        
-//        let leftItem: UIBarButtonItem = UIBarButtonItem()
-//        
+
+//    第三種
+        
+//        var leftItem: UIBarButtonItem = UIBarButtonItem()
 //        leftItem.style = .Plain
 //        leftItem.title = "返回"
-//        
-//        self.navigationItem.leftBarButtonItem = leftItem
+//        leftItem = self.navigationItem.leftBarButtonItem!
 
-        
+
+
         
 //        loadingView()
       
-        
+        print("parse start")
         beginParsing(chooseUrl())
         tbData!.reloadData()  //更新tableView資料
         
         tbData.delegate = self
         tbData.dataSource = self
 
-//        
-
-        
     }
     
     
@@ -105,11 +95,6 @@ class thirdViewController: UIViewController,UITableViewDelegate,UITableViewDataS
 //        if (temp.catgory) == "即時新聞"{
 //            print("第三頁抓到了新聞 嗚嗚")
 //        }
-        
-        
-   
-
-        
     }
     
     
@@ -117,7 +102,7 @@ class thirdViewController: UIViewController,UITableViewDelegate,UITableViewDataS
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
         if segue.identifier == "webViewSegue"{
-            let vc = segue.destinationViewController as! ViewController
+            let vc = segue.destinationViewController as! webView
 //            vc.colorString = self
             print("got segue")
         }
@@ -158,11 +143,12 @@ class thirdViewController: UIViewController,UITableViewDelegate,UITableViewDataS
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
+       
          let gotoWebViewController = self.storyboard?.instantiateViewControllerWithIdentifier("webViewController")
         
         self.navigationController?.pushViewController(gotoWebViewController!, animated: true)
         
-        gotoWebViewController?.segueForUnwindingToViewController(gotoWebViewController!, fromViewController: self, identifier: "webViewSegue")
+//        gotoWebViewController?.segueForUnwindingToViewController(gotoWebViewController!, fromViewController: self, identifier: "webViewSegue")
         
     }
     
@@ -174,8 +160,6 @@ class thirdViewController: UIViewController,UITableViewDelegate,UITableViewDataS
     
     //開始parse
     func parser(parser: NSXMLParser, foundCharacters string: String){  //每次parse都會做一遍
-        
-                print("parse start")
         if element.isEqualToString("title") {  //標題
             title1.appendString(string)
         } else if element.isEqualToString("pubDate") {  //時間
@@ -220,32 +204,28 @@ class thirdViewController: UIViewController,UITableViewDelegate,UITableViewDataS
         if (elementName as NSString).isEqualToString("item") {
             if !title1.isEqual(nil) {
                 elements.setObject(title1, forKey: "title")
-                                print(title1)
+                 print(title1)
             }
             if !date.isEqual(nil) {
                 elements.setObject(date, forKey: "date")
-                                print(date)
+                 print(date)
             }
             if !link.isEqual(nil) {
                 elements.setObject(link, forKey: "link")
-                                    print(link)
+                 print(link)
             }
             if !source.isEqual(nil) {
                 elements.setObject(source, forKey: "source")
-                                                print(source)
+                print(source)
             }
             if !img.isEqual(nil) {
                 elements.setObject(img, forKey: "description")
-                targetString = ""
                 getimg(img as String)
-//                print(img)
+                print(img)
                 
             }
             posts.addObject(elements)  //將資料存入object 中
-            print(elements)
         }
-//        print(elements)
-//                tbData!.reloadData()  //更新tableView資料
     }
     
     
@@ -268,9 +248,7 @@ class thirdViewController: UIViewController,UITableViewDelegate,UITableViewDataS
     }
     
     
-    func back(){
-        print("back")
-    }
+
     
     
     func getimg(newsUrl:String)-> String{
@@ -296,15 +274,11 @@ class thirdViewController: UIViewController,UITableViewDelegate,UITableViewDataS
             
             let rangeOfString = NSRange(location: startrRange.location+9, length: imgLocation-11)               //開始與長度
             targetString = newsUrlNSString.substringWithRange(rangeOfString)
-            //                   print(targetString)          //取得圖片網頁
-            
             //            if let checkedUrl = NSURL(string: targetString) {
             //                imageView.contentMode = .ScaleAspectFit
             //                downloadImage(checkedUrl)
             //            }
-            //            print("拿到圖片了:\(targetString)\n")
-            //            print("-----------")
-            
+            print("img  :\(targetString)")
         }else{
             //            print("沒有圖片:\(targetString)\n")
             //             print("-----------")
@@ -316,6 +290,7 @@ class thirdViewController: UIViewController,UITableViewDelegate,UITableViewDataS
     
     func beginParsing(urlstring:String){
         posts = []
+        print(urlstring)
         url = urlstring
 //        url = "https://tw.news.yahoo.com/rss/"
 //        do{
@@ -332,7 +307,6 @@ class thirdViewController: UIViewController,UITableViewDelegate,UITableViewDataS
         
 //        }
         parser.delegate = self
-        
         print("being parse")
         parser.parse()   //將資料丟給 parse處理
 
@@ -340,102 +314,86 @@ class thirdViewController: UIViewController,UITableViewDelegate,UITableViewDataS
 
     func chooseUrl()->String{
         var rssSite:String = ""
-        
-        print(temp.catgory)
+        print("chooserUrl: \(temp.catgory)")
         switch temp.catgory{
         case "即時新聞":
              rssSite = "https://tw.news.yahoo.com/rss/"
-//            beginParsing(rssSite)
-            print(temp.catgory)
+//            print(temp.catgory)
             break
             
         case "政治新聞":
             rssSite = "https://tw.news.yahoo.com/rss/politics"
-            print(temp.catgory)
-//            beginParsing(rssSite)
+//            print(temp.catgory)
             break
             
         case "地方新聞":
             rssSite = "https://tw.news.yahoo.com/rss/local"
-//            beginParsing(rssSite)
-            print(temp.catgory)
+//            print(temp.catgory)
             break
             
         case "科技新聞":
             rssSite = "https://tw.news.yahoo.com/rss/technology"
-//            beginParsing(rssSite)
-            print(temp.catgory)
+//            print(temp.catgory)
             break
             
         case "體育新聞":
             rssSite = "https://tw.news.yahoo.com/rss/sports"
-//            beginParsing(rssSite)
-            print(temp.catgory)
+//            print(temp.catgory)
             break
             
         case "教育新聞":
             rssSite = "https://tw.news.yahoo.com/rss/education"
-//            beginParsing(rssSite)
-            print(temp.catgory)
+//            print(temp.catgory)
             break
             
         case "即時新聞":
             rssSite = "https://tw.news.yahoo.com/rss/"
-//            beginParsing(rssSite)
-            print(temp.catgory)
+//            print(temp.catgory)
             break
             
         case "民生新聞":
             rssSite = "https://tw.news.yahoo.com/rss/lifestyle"
-//            beginParsing(rssSite)
-            print(temp.catgory)
+//            print(temp.catgory)
             break
             
         case "影劇新聞":
             rssSite = "https://tw.news.yahoo.com/rss/entertainment"
-//            beginParsing(rssSite)
-            print(temp.catgory)
+//            print(temp.catgory)
             break
             
         case "社會新聞":
             rssSite = "https://tw.news.yahoo.com/rss/society"
-//            beginParsing(rssSite)
-            print(temp.catgory)
+//            print(temp.catgory)
             break
             
         case "國際新聞":
             rssSite = "https://tw.news.yahoo.com/rss/world"
-//            beginParsing(rssSite)
-            print(temp.catgory)
+//            print(temp.catgory)
             break
             
         case "財經新聞":
             rssSite = "https://tw.news.yahoo.com/rss/finance"
-//            beginParsing(rssSite)
-            print(temp.catgory)
+//            print(temp.catgory)
             break
             
         case "健康新聞":
             rssSite = "https://tw.news.yahoo.com/rss/health"
-//            beginParsing(rssSite)
-            print(temp.catgory)
+//            print(temp.catgory)
             break
             
         case "藝文新聞":
             rssSite = "https://tw.news.yahoo.com/rss/art"
-//            beginParsing(rssSite)
-            print(temp.catgory)
+//            print(temp.catgory)
             break
             
         default:"旅遊新聞"
         rssSite = "https://tw.travel.yahoo.com/rss/topic/taiwan/all#"
-//        beginParsing(rssSite)
-        print(temp.catgory)
+//        print(temp.catgory)
             break
         }
-        print(temp.catgory)
         return rssSite
     }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
