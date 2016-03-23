@@ -147,7 +147,7 @@ class BubbleNode: SIFloatingNode{
             
         }
         print("change page ")
-        return SKAction.scaleTo(10, duration: 0.7)
+        return SKAction.scaleTo(1, duration: 1)
 
     }
     

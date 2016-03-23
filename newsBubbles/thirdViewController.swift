@@ -62,9 +62,9 @@ class thirdViewController: UIViewController,UITableViewDelegate,UITableViewDataS
 //                )
     //第二種
 //                navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil)
-
+//
 //                title = "返回"
-
+//
 //                title = "返回上一頁"
 
 
@@ -82,17 +82,14 @@ class thirdViewController: UIViewController,UITableViewDelegate,UITableViewDataS
 //        
 //        self.navigationItem.leftBarButtonItem = leftItem
 
-        //印出泡泡
-//                for _ in 0..<15 {
-//                    let node = BubbleNode.instantiate()
-//                    node.labelNode.text = String(arc4random()%100)
-//                    floatingCollectionScene.addChild(node)
-//                }
-//
-//      
         
-        chooseUrl()
+        
+//        loadingView()
+      
+        
+        beginParsing(chooseUrl())
         tbData!.reloadData()  //更新tableView資料
+        
         tbData.delegate = self
         tbData.dataSource = self
 
@@ -110,7 +107,7 @@ class thirdViewController: UIViewController,UITableViewDelegate,UITableViewDataS
 //        }
         
         
-      
+   
 
         
     }
@@ -118,6 +115,13 @@ class thirdViewController: UIViewController,UITableViewDelegate,UITableViewDataS
     
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if segue.identifier == "webViewSegue"{
+            let vc = segue.destinationViewController as! ViewController
+//            vc.colorString = self
+            print("got segue")
+        }
+        
         
     }
     
@@ -150,6 +154,19 @@ class thirdViewController: UIViewController,UITableViewDelegate,UITableViewDataS
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
+    
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+         let gotoWebViewController = self.storyboard?.instantiateViewControllerWithIdentifier("webViewController")
+        
+        self.navigationController?.pushViewController(gotoWebViewController!, animated: true)
+        
+        gotoWebViewController?.segueForUnwindingToViewController(gotoWebViewController!, fromViewController: self, identifier: "webViewSegue")
+        
+    }
+    
+    
     
     
     
@@ -221,11 +238,11 @@ class thirdViewController: UIViewController,UITableViewDelegate,UITableViewDataS
                 elements.setObject(img, forKey: "description")
                 targetString = ""
                 getimg(img as String)
-                print(img)
+//                print(img)
                 
             }
             posts.addObject(elements)  //將資料存入object 中
-            
+            print(elements)
         }
 //        print(elements)
 //                tbData!.reloadData()  //更新tableView資料
@@ -233,6 +250,23 @@ class thirdViewController: UIViewController,UITableViewDelegate,UITableViewDataS
     
     
     //自訂方法
+    
+    func loadingView(){
+        let alert = UIAlertController(title: nil, message: "Please wait...", preferredStyle: .Alert)
+        
+        alert.view.tintColor = UIColor.blackColor()
+        let loadingIndicator: UIActivityIndicatorView = UIActivityIndicatorView(frame: CGRectMake(10, 5, 50, 50)) as UIActivityIndicatorView
+        loadingIndicator.hidesWhenStopped = true
+        loadingIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.Gray
+        loadingIndicator.startAnimating();
+        
+        alert.view.addSubview(loadingIndicator)
+        presentViewController(alert, animated: true, completion: nil)
+        
+        dismissViewControllerAnimated(false, completion: nil)
+        dismissViewControllerAnimated(false,completion:nil)
+    }
+    
     
     func back(){
         print("back")
@@ -304,102 +338,103 @@ class thirdViewController: UIViewController,UITableViewDelegate,UITableViewDataS
 
     }
 
-    func chooseUrl(){
-
+    func chooseUrl()->String{
+        var rssSite:String = ""
+        
         print(temp.catgory)
         switch temp.catgory{
         case "即時新聞":
-            let rssSite:String = "https://tw.news.yahoo.com/rss/"
-            beginParsing(rssSite)
+             rssSite = "https://tw.news.yahoo.com/rss/"
+//            beginParsing(rssSite)
             print(temp.catgory)
             break
             
         case "政治新聞":
-            let rssSite:String = "https://tw.news.yahoo.com/rss/politics"
+            rssSite = "https://tw.news.yahoo.com/rss/politics"
             print(temp.catgory)
-            beginParsing(rssSite)
+//            beginParsing(rssSite)
             break
             
         case "地方新聞":
-            let rssSite:String = "https://tw.news.yahoo.com/rss/local"
-            beginParsing(rssSite)
+            rssSite = "https://tw.news.yahoo.com/rss/local"
+//            beginParsing(rssSite)
             print(temp.catgory)
             break
             
         case "科技新聞":
-            let rssSite:String = "https://tw.news.yahoo.com/rss/technology"
-            beginParsing(rssSite)
+            rssSite = "https://tw.news.yahoo.com/rss/technology"
+//            beginParsing(rssSite)
             print(temp.catgory)
             break
             
         case "體育新聞":
-            let rssSite:String = "https://tw.news.yahoo.com/rss/sports"
-            beginParsing(rssSite)
+            rssSite = "https://tw.news.yahoo.com/rss/sports"
+//            beginParsing(rssSite)
             print(temp.catgory)
             break
             
         case "教育新聞":
-            let rssSite:String = "https://tw.news.yahoo.com/rss/education"
-            beginParsing(rssSite)
+            rssSite = "https://tw.news.yahoo.com/rss/education"
+//            beginParsing(rssSite)
             print(temp.catgory)
             break
             
         case "即時新聞":
-            let rssSite:String = "https://tw.news.yahoo.com/rss/"
-            beginParsing(rssSite)
+            rssSite = "https://tw.news.yahoo.com/rss/"
+//            beginParsing(rssSite)
             print(temp.catgory)
             break
             
         case "民生新聞":
-            let rssSite:String = "https://tw.news.yahoo.com/rss/lifestyle"
-            beginParsing(rssSite)
+            rssSite = "https://tw.news.yahoo.com/rss/lifestyle"
+//            beginParsing(rssSite)
             print(temp.catgory)
             break
             
         case "影劇新聞":
-            let rssSite:String = "https://tw.news.yahoo.com/rss/entertainment"
-            beginParsing(rssSite)
+            rssSite = "https://tw.news.yahoo.com/rss/entertainment"
+//            beginParsing(rssSite)
             print(temp.catgory)
             break
             
         case "社會新聞":
-            let rssSite:String = "https://tw.news.yahoo.com/rss/society"
-            beginParsing(rssSite)
+            rssSite = "https://tw.news.yahoo.com/rss/society"
+//            beginParsing(rssSite)
             print(temp.catgory)
             break
             
         case "國際新聞":
-            let rssSite:String = "https://tw.news.yahoo.com/rss/world"
-            beginParsing(rssSite)
+            rssSite = "https://tw.news.yahoo.com/rss/world"
+//            beginParsing(rssSite)
             print(temp.catgory)
             break
             
         case "財經新聞":
-            let rssSite:String = "https://tw.news.yahoo.com/rss/finance"
-            beginParsing(rssSite)
+            rssSite = "https://tw.news.yahoo.com/rss/finance"
+//            beginParsing(rssSite)
             print(temp.catgory)
             break
             
         case "健康新聞":
-            let rssSite:String = "https://tw.news.yahoo.com/rss/health"
-            beginParsing(rssSite)
+            rssSite = "https://tw.news.yahoo.com/rss/health"
+//            beginParsing(rssSite)
             print(temp.catgory)
             break
             
         case "藝文新聞":
-            let rssSite:String = "https://tw.news.yahoo.com/rss/art"
-            beginParsing(rssSite)
+            rssSite = "https://tw.news.yahoo.com/rss/art"
+//            beginParsing(rssSite)
             print(temp.catgory)
             break
             
         default:"旅遊新聞"
-        let rssSite:String = "https://tw.travel.yahoo.com/rss/topic/taiwan/all#"
-        beginParsing(rssSite)
+        rssSite = "https://tw.travel.yahoo.com/rss/topic/taiwan/all#"
+//        beginParsing(rssSite)
         print(temp.catgory)
             break
         }
         print(temp.catgory)
-
+        return rssSite
     }
     
     override func didReceiveMemoryWarning() {
