@@ -161,11 +161,16 @@ class BubbleNode: SIFloatingNode{
     }
     
     func showTableView(){
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewControllerWithIdentifier("thirdViewController")
-        //let vcc = storyboard.instantiateViewControllerWithIdentifier("ViewController")
-        VC!.presentViewController(vc, animated:true, completion: nil)
-    
+//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//        let vc = storyboard.instantiateViewControllerWithIdentifier("thirdViewController")
+//        //let vcc = storyboard.instantiateViewControllerWithIdentifier("ViewController")
+//        VC!.presentViewController(vc, animated:true, completion: nil)
+//    
+//        let thirdViewController = self.storyboard.instantiateViewControllerWithIdentifier("thirdViewController")
+//        
+        let gotoThirdViewController = self.VC?.storyboard?.instantiateViewControllerWithIdentifier("thirdViewController")
+        self.VC?.navigationController?.pushViewController(gotoThirdViewController!, animated: true)
+        
     }
 
 
