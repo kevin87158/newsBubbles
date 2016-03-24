@@ -418,10 +418,6 @@ class thirdViewController: UIViewController,UITableViewDelegate,UITableViewDataS
 //            print(temp.catgory)
             break
             
-        case "地方新聞":
-            rssSite = "https://tw.news.yahoo.com/rss/local"
-//            print(temp.catgory)
-            break
             
         case "科技新聞":
             rssSite = "https://tw.news.yahoo.com/rss/technology"
@@ -443,10 +439,6 @@ class thirdViewController: UIViewController,UITableViewDelegate,UITableViewDataS
 //            print(temp.catgory)
             break
             
-        case "民生新聞":
-            rssSite = "https://tw.news.yahoo.com/rss/lifestyle"
-//            print(temp.catgory)
-            break
             
         case "影劇新聞":
             rssSite = "https://tw.news.yahoo.com/rss/entertainment"
@@ -478,8 +470,39 @@ class thirdViewController: UIViewController,UITableViewDelegate,UITableViewDataS
 //            print(temp.catgory)
             break
             
-        default:"旅遊新聞"
-        rssSite = "https://tw.travel.yahoo.com/rss/topic/taiwan/all#"
+        case "最新即時新聞":
+            rssSite = "http://www.appledaily.com.tw/rss/create/kind/rnews/type/new"
+            break
+        case "頭條新聞":
+            rssSite = "http://www.appledaily.com.tw/rss/create/kind/sec/type/1077"
+            break
+        case "娛樂名人新聞":
+            rssSite = "http://www.appledaily.com.tw/rss/create/kind/sec/type/1600"
+            break
+        case "國際頭條新聞":
+            rssSite = "http://www.appledaily.com.tw/rss/create/kind/sec/type/31488833"
+            break
+        case "體育焦點":
+            rssSite = "http://www.appledaily.com.tw/rss/create/kind/sec/type/2153"
+            break
+        case "財經焦點":
+            rssSite = "http://www.appledaily.com.tw/rss/create/kind/sec/type/14"
+            break
+        case "科技3C新聞":
+            rssSite = "http://www.appledaily.com.tw/rss/create/kind/sec/type/1048"
+            break
+        case "地產焦點":
+            rssSite = "http://www.appledaily.com.tw/rss/create/kind/sec/type/1061"
+            break
+        case "美食天地":
+            rssSite = "http://www.appledaily.com.tw/rss/create/kind/sec/type/1898"
+            break
+        case "旅遊與探險":
+            rssSite = "http://www.appledaily.com.tw/rss/create/kind/sec/type/24"
+            break
+            
+        default:"即時新聞"
+        rssSite = "https://tw.news.yahoo.com/rss/"
 //        print(temp.catgory)
             break
         }

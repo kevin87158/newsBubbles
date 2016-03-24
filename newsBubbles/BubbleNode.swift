@@ -137,6 +137,107 @@ class BubbleNode: SIFloatingNode{
             showTableView()
             break
             
+            
+            
+//apple news
+        case "最新新聞" :
+            temp.catgory = "最新新聞"
+            print("泡泡選擇:最新新聞")
+            showTableView()
+            break
+            
+        case "頭條新聞" :
+            temp.catgory = "頭條新聞"
+            print("泡泡選擇:頭條新聞")
+            showTableView()
+            break
+            
+        case "娛樂名人新聞" :
+            temp.catgory = "娛樂名人新聞"
+            print("泡泡選擇:娛樂名人新聞")
+            showTableView()
+            break
+            
+        case "國際頭條新聞" :
+            temp.catgory = "國際頭條新聞"
+            print("泡泡選擇:國際頭條新聞")
+            showTableView()
+            break
+            
+        case "體育焦點" :
+            temp.catgory = "體育焦點"
+            print("泡泡選擇:體育焦點")
+            showTableView()
+            break
+            
+        case "財經焦點" :
+            temp.catgory = "財經焦點"
+            print("泡泡選擇:財經焦點")
+            showTableView()
+            break
+            
+        case "科技3C新聞" :
+            temp.catgory = "科技3C新聞"
+            print("泡泡選擇:科技3C新聞")
+            showTableView()
+            break
+            
+        case "地產焦點" :
+            temp.catgory = "地產焦點"
+            print("泡泡選擇:地產焦點")
+            showTableView()
+            break
+            
+        case "美食天地" :
+            temp.catgory = "美食天地"
+            print("泡泡選擇:美食天地")
+            showTableView()
+            break
+            
+        case "旅遊與探險" :
+            temp.catgory = "旅遊與探險"
+            print("泡泡選擇:旅遊與探險")
+            showTableView()
+            break
+            
+//udnNews
+            case "要聞" :
+                temp.catgory = "要聞"
+                print("泡泡選擇:要聞")
+                showTableView()
+                break
+        case "udn娛樂新聞" :
+            temp.catgory = "udn娛樂新聞"
+            print("泡泡選擇:udn娛樂新聞")
+            showTableView()
+            break
+        case "udn地方新聞" :
+            temp.catgory = "udn地方新聞"
+            print("泡泡選擇:udn地方新聞")
+            showTableView()
+            break
+        case "udn國際新聞" :
+            temp.catgory = "udn國際新聞"
+            print("泡泡選擇:udn國際新聞")
+            showTableView()
+            break
+        case "要聞" :
+            temp.catgory = "運動新聞"
+            print("泡泡選擇:運動新聞")
+            showTableView()
+            break
+            
+            
+//大類別選擇
+        case "yahoo新聞":
+            showYahooNewsBubbles()  //到yahoo 的類別選擇
+            break
+        case "蘋果新聞":
+            showAppleNewsBubbles()  //到AppleNews 的類別選擇
+            break
+        case "udn新聞":
+            showUdnNewsBubbles()    //到UdnNews 的類別選擇
+            break
         default:
             temp.catgory = "即時新聞"
             print("泡泡選擇:即時新聞")
@@ -171,7 +272,21 @@ class BubbleNode: SIFloatingNode{
 //        title?.navigationItem.title = "即時新聞"
     }
 
-
+    func showYahooNewsBubbles(){
+        let gotoYahooViewController = self.VC?.storyboard?.instantiateViewControllerWithIdentifier("ViewController")
+        self.VC?.navigationController?.pushViewController(gotoYahooViewController!, animated: true)
+    }
+    
+    func showAppleNewsBubbles(){
+        let gotoAppleViewController = self.VC?.storyboard?.instantiateViewControllerWithIdentifier("appleViewController")
+        self.VC?.navigationController?.pushViewController(gotoAppleViewController!, animated: true)
+    }
+    
+    func showUdnNewsBubbles(){
+        let gotoUdnViewController = self.VC?.storyboard?.instantiateViewControllerWithIdentifier("udnViewController")
+        self.VC?.navigationController?.pushViewController(gotoUdnViewController!, animated: true)
+    }
+    
     
     
     override func removeAnimation() -> SKAction? {

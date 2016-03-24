@@ -9,7 +9,9 @@
 /* Begin PBXBuildFile section */
 		0A01EC041CA2FF8400F18431 /* webViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A01EC031CA2FF8400F18431 /* webViewController.swift */; };
 		0A01EC261CA3C14300F18431 /* loadingview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A01EC251CA3C14300F18431 /* loadingview.swift */; };
-		0A01EC281CA3FBE800F18431 /* testViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A01EC271CA3FBE800F18431 /* testViewController.swift */; };
+		0A01EC2A1CA42FAC00F18431 /* newFirstPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A01EC291CA42FAC00F18431 /* newFirstPageViewController.swift */; };
+		0A01EC2C1CA4344600F18431 /* appleNewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A01EC2B1CA4344600F18431 /* appleNewsViewController.swift */; };
+		0A01EC2E1CA4345700F18431 /* udnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A01EC2D1CA4345700F18431 /* udnViewController.swift */; };
 		0A63BD6E1C8DE9B70093D39B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A63BD6D1C8DE9B70093D39B /* AppDelegate.swift */; };
 		0A63BD701C8DE9B70093D39B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A63BD6F1C8DE9B70093D39B /* ViewController.swift */; };
 		0A63BD731C8DE9B70093D39B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A63BD711C8DE9B70093D39B /* Main.storyboard */; };
@@ -30,7 +32,9 @@
 /* Begin PBXFileReference section */
 		0A01EC031CA2FF8400F18431 /* webViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = webViewController.swift; sourceTree = "<group>"; };
 		0A01EC251CA3C14300F18431 /* loadingview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = loadingview.swift; sourceTree = "<group>"; };
-		0A01EC271CA3FBE800F18431 /* testViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = testViewController.swift; sourceTree = "<group>"; };
+		0A01EC291CA42FAC00F18431 /* newFirstPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = newFirstPageViewController.swift; sourceTree = "<group>"; };
+		0A01EC2B1CA4344600F18431 /* appleNewsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = appleNewsViewController.swift; sourceTree = "<group>"; };
+		0A01EC2D1CA4345700F18431 /* udnViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = udnViewController.swift; sourceTree = "<group>"; };
 		0A63BD6A1C8DE9B70093D39B /* newsBubbles.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = newsBubbles.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A63BD6D1C8DE9B70093D39B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0A63BD6F1C8DE9B70093D39B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -83,7 +87,10 @@
 			isa = PBXGroup;
 			children = (
 				0A63BD6D1C8DE9B70093D39B /* AppDelegate.swift */,
+				0A01EC291CA42FAC00F18431 /* newFirstPageViewController.swift */,
 				0A63BD6F1C8DE9B70093D39B /* ViewController.swift */,
+				0A01EC2D1CA4345700F18431 /* udnViewController.swift */,
+				0A01EC2B1CA4344600F18431 /* appleNewsViewController.swift */,
 				0AA5B4161C9705760090D4E5 /* secondViewController.swift */,
 				DD80B98E1C9BD4E200E12F7E /* thirdViewController.swift */,
 				0A01EC031CA2FF8400F18431 /* webViewController.swift */,
@@ -96,7 +103,6 @@
 				0A63BD791C8DE9B70093D39B /* Info.plist */,
 				0AA5B4191C9705CD0090D4E5 /* slideBar */,
 				0AA5B4181C97059F0090D4E5 /* bubbles */,
-				0A01EC271CA3FBE800F18431 /* testViewController.swift */,
 			);
 			path = newsBubbles;
 			sourceTree = "<group>";
@@ -197,10 +203,12 @@
 			files = (
 				0A63BD701C8DE9B70093D39B /* ViewController.swift in Sources */,
 				0A63BD6E1C8DE9B70093D39B /* AppDelegate.swift in Sources */,
+				0A01EC2A1CA42FAC00F18431 /* newFirstPageViewController.swift in Sources */,
+				0A01EC2E1CA4345700F18431 /* udnViewController.swift in Sources */,
 				DD97DD8E1C9696AB00E40D47 /* BubblesScene.swift in Sources */,
-				0A01EC281CA3FBE800F18431 /* testViewController.swift in Sources */,
 				0A7FBEE71CA0DE5F005772FE /* myTableViewCell.swift in Sources */,
 				DD97DD8C1C96968500E40D47 /* BubbleNode.swift in Sources */,
+				0A01EC2C1CA4344600F18431 /* appleNewsViewController.swift in Sources */,
 				0A01EC261CA3C14300F18431 /* loadingview.swift in Sources */,
 				0A63BD841C8DEF5B0093D39B /* backTableVc.swift in Sources */,
 				DD80B98F1C9BD4E200E12F7E /* thirdViewController.swift in Sources */,
