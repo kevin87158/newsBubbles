@@ -38,22 +38,22 @@ class thirdViewController: UIViewController,UITableViewDelegate,UITableViewDataS
         super.viewDidLoad()
 
 
-       
-                skView = SKView(frame: UIScreen.mainScreen().applicationFrame)
-                skView.backgroundColor = SKColor.blueColor()
-                view.addSubview(skView)
+//       
+//                skView = SKView(frame: UIScreen.mainScreen().applicationFrame)
+//                skView.backgroundColor = SKColor.blueColor()
+//                view.addSubview(skView)
 //
 //            
-//
-                floatingCollectionScene = BubblesScene(size: skView.bounds.size)
-                let navBarHeight = CGRectGetHeight(navigationController!.navigationBar.frame)
-                let statusBarHeight = CGRectGetHeight(UIApplication.sharedApplication().statusBarFrame)
-        
-//                let navBarHeight = CGRectGetHeight(self.accessibilityFrame.standardized)
-//                let statusBarHeight = CGRectGetHeight(self.accessibilityFrame.standardized)
-                floatingCollectionScene.topOffset = navBarHeight + statusBarHeight
-                skView.presentScene(floatingCollectionScene)  //泡泡呈現的位置
-//
+////
+//                floatingCollectionScene = BubblesScene(size: skView.bounds.size)
+//                let navBarHeight = CGRectGetHeight(navigationController!.navigationBar.frame)
+//                let statusBarHeight = CGRectGetHeight(UIApplication.sharedApplication().statusBarFrame)
+//        
+////                let navBarHeight = CGRectGetHeight(self.accessibilityFrame.standardized)
+////                let statusBarHeight = CGRectGetHeight(self.accessibilityFrame.standardized)
+//                floatingCollectionScene.topOffset = navBarHeight + statusBarHeight
+//                skView.presentScene(floatingCollectionScene)  //泡泡呈現的位置
+////
 //
 //                // navigation item 的測試
         
