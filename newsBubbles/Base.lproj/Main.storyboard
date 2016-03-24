@@ -79,7 +79,7 @@
                                         <rect key="frame" x="0.0" y="28" width="600" height="46"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="EZu-Ul-B2y" id="9Cs-RZ-7uY">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="46"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="45.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k2Y-PU-cnQ">
@@ -128,10 +128,10 @@
             </objects>
             <point key="canvasLocation" x="1434" y="3294"/>
         </scene>
-        <!--View Controller-->
+        <!--Web View Controller-->
         <scene sceneID="3kk-r8-Cnf">
             <objects>
-                <viewController storyboardIdentifier="webViewController" id="EBG-GH-gxo" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="webViewController" id="EBG-GH-gxo" customClass="webViewController" customModule="newsBubbles" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Wgu-VY-Nbq"/>
                         <viewControllerLayoutGuide type="bottom" id="Epo-in-3aJ"/>
@@ -147,6 +147,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="myWebView" destination="3eb-0i-Joc" id="9IJ-1s-3O7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IxK-Fu-0bd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

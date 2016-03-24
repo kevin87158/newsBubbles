@@ -9,4 +9,6 @@
 import Foundation
 class temp {
     static var catgory:String = ""
+    static var loadUrl:String = ""
+    
 }

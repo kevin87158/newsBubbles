@@ -29,7 +29,7 @@ class thirdViewController: UIViewController,UITableViewDelegate,UITableViewDataS
     var targetString:String = ""
     var imageArray = NSMutableArray()
     var myWebView = UIWebView()
-    
+//    var urlForSegue = String()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -100,11 +100,10 @@ class thirdViewController: UIViewController,UITableViewDelegate,UITableViewDataS
     
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        print("segue")
         
         if segue.identifier == "webViewSegue"{
-            let vc = segue.destinationViewController as! webView
-//            vc.colorString = self
-            print("got segue")
+            print("\(temp.loadUrl)")
         }
         
         
@@ -142,13 +141,28 @@ class thirdViewController: UIViewController,UITableViewDelegate,UITableViewDataS
     
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+
+//            urlForSegue = ""
+            temp.loadUrl = posts.objectAtIndex(indexPath.row).valueForKey("link")as! String
         
-       
-         let gotoWebViewController = self.storyboard?.instantiateViewControllerWithIdentifier("webViewController")
         
-        self.navigationController?.pushViewController(gotoWebViewController!, animated: true)
+        //使用手寫 呈現webView
+            myWebView.frame = CGRectMake(0, 0, UIScreen.mainScreen().bounds.width, UIScreen.mainScreen().bounds.height)
+            myWebView.loadRequest(NSURLRequest(URL: NSURL(string: posts.objectAtIndex(indexPath.row).valueForKey("link")as! String)!))
+            self.view.addSubview(myWebView)
+
+        //        gotoWebViewController?.segueForUnwindingToViewController(gotoWebViewController!, fromViewController: self, identifier: "webViewSegue")
         
-//        gotoWebViewController?.segueForUnwindingToViewController(gotoWebViewController!, fromViewController: self, identifier: "webViewSegue")
+  
+        //使用segue 傳資料給webView
+//                 let gotoWebViewController = self.storyboard?.instantiateViewControllerWithIdentifier("webViewController")
+//        urlForSegue = posts.objectAtIndex(indexPath.row).valueForKey("link")as! String
+
+//        let webSegue = self.segueForUnwindingToViewController(gotoWebViewController!, fromViewController: self, identifier: "webViewSegue")
+//
+//        self.prepareForSegue(webSegue!, sender: self)
+//        
+        
         
     }
     
