@@ -153,7 +153,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="DOR-Wj-hve">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Fpi-fD-DJN"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="Fpi-fD-DJN">
+                            <connections>
+                                <segue destination="jOL-zv-pMe" kind="push" id="siN-Hd-9rD"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PjY-8f-m7K" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -173,6 +177,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="w3Y-2c-zi6"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mhZ-UN-WAa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -76,15 +76,19 @@ class thirdViewController: UIViewController,UITableViewDelegate,UITableViewDataS
 //        leftItem.style = .Plain
 //        leftItem.title = "返回"
 //        leftItem = self.navigationItem.leftBarButtonItem!
-//
+//hhh
 //        
         
 
   
 
-        
+//        self.navigationController?.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: "addFavoriteNewCatgory:")
 
-      
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(
+                                barButtonSystemItem: .Add,
+                                target: self,
+                                action: "addFavoriteNewCatgory:"
+                            )
         
         
         print("parse start")
@@ -115,16 +119,16 @@ class thirdViewController: UIViewController,UITableViewDelegate,UITableViewDataS
         
         
         
-//        let parseUrl = chooseUrl()
-//        beginParsing(parseUrl)
-//        tbData!.reloadData()  //更新tableView資料
+        let parseUrl = chooseUrl()
+        beginParsing(parseUrl)
+        tbData!.reloadData()  //更新tableView資料
 
         
  
         
         
-//        tbData.delegate = self
-//        tbData.dataSource = self
+        tbData.delegate = self
+        tbData.dataSource = self
 
     }
     
@@ -316,7 +320,27 @@ class thirdViewController: UIViewController,UITableViewDelegate,UITableViewDataS
 //    }
     
     
+    func addFavoriteNewCatgory(sender:UINavigationItem){
+        
+        let alert = UIAlertController(title: "加入我的最愛", message: "是否要加入我的最愛?", preferredStyle: UIAlertControllerStyle.Alert)
+//        alert.addAction(UIAlertAction(title: "確定", style: UIAlertActionStyle.Default, handler: nil))
+        alert.addAction(UIAlertAction(title: "確定", style: UIAlertActionStyle.Default, handler: { (action:UIAlertAction!) -> Void in
+            
+            let alert1 = UIAlertController(title: "", message: "加入成功", preferredStyle: UIAlertControllerStyle.Alert)
+            alert1.addAction(UIAlertAction(title: "確定", style: UIAlertActionStyle.Default, handler: nil))
+            self.presentViewController(alert1, animated: true, completion: nil)
 
+        }))
+        
+        alert.addAction(UIAlertAction(title: "取消", style: UIAlertActionStyle.Cancel, handler: nil))
+        self.presentViewController(alert, animated: true, completion: nil)
+        
+        print("將類別加入我的最愛")
+
+
+        temp.favoriteCategory = temp.catgory
+        
+    }
     
     
     func getimg(newsUrl:String)-> String{

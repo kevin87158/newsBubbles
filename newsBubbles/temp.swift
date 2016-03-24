@@ -13,5 +13,5 @@ class temp {
     static var firstPageNewsTitle:String = ""
     static var firstPageNewsDate:String = ""
     static var  firstPageNewsUrl:String = ""
-    
+    static var favoriteCategory:String = ""
 }
