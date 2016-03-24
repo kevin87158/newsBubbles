@@ -10,5 +10,8 @@ import Foundation
 class temp {
     static var catgory:String = ""
     static var loadUrl:String = ""
+    static var firstPageNewsTitle:String = ""
+    static var firstPageNewsDate:String = ""
+    static var  firstPageNewsUrl:String = ""
     
 }

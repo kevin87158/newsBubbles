@@ -9,12 +9,13 @@
 import UIKit
 import SpriteKit
 
-class ViewController: UITabBarController{
+class ViewController: UITabBarController,NSXMLParserDelegate{
     private var skView: SKView!
     private var floatingCollectionScene: BubblesScene!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         
         skView = SKView(frame: UIScreen.mainScreen().bounds)
         skView.backgroundColor = SKColor.whiteColor()
@@ -29,35 +30,64 @@ class ViewController: UITabBarController{
         //這邊改寫成另種數值
 //        let navBarHeight = CGRectGetHeight(self.accessibilityFrame.standardized)
 //        let statusBarHeight = CGRectGetHeight(self.accessibilityFrame.standardized)
+        
+        
 //        floatingCollectionScene.topOffset = navBarHeight + statusBarHeight
         skView.presentScene(floatingCollectionScene)
 
 
         
-        let title = UILabel()
-        title.text = "news  Bubbles"
-        title.frame = CGRectMake(120, 50, self.view.frame.width, 20)
-        skView.bringSubviewToFront(title)
+        let btn1 = UIButton(frame: CGRect(x: 0, y: 600, width:self.view.frame.width, height: self.view.frame.height/10))
+        btn1.backgroundColor = UIColor.blueColor()
+        skView.addSubview(btn1)
+        
+//        let btn2 = UIButton(frame: CGRect(x: 0, y: 0, width:self.view.frame.width, height: self.view.frame.height/10))
+//        btn2.backgroundColor = UIColor.redColor()
+//        btn2.titleLabel?.text = "news bubbles"
+//        btn2.addTarget(self, action: "gotoNewPage:", forControlEvents: UIControlEvents.TouchUpInside)
+//        skView.addSubview(btn2)
+        
+        
+        let btn3 = UIButton(frame: CGRect(x: 30, y: 300, width:100, height: 100))
+        btn3.backgroundColor = UIColor.blackColor()
+        btn3.titleLabel?.text = "gotoNewPage"
+        btn3.addTarget(self, action: "gotoNewPage:", forControlEvents: UIControlEvents.TouchUpInside)
+        skView.addSubview(btn3)
+        
+        
+
+  
+        
+//最新的新聞內容 與上列設定
+        
+        //取得最新的新聞內容 只取最新的一筆
+        var getfirstNews:thirdViewController = thirdViewController()
+        let news = getfirstNews.beginParsing("https://tw.news.yahoo.com/rss/")
+      
+        
 
         
+        let firstnews = UILabel(frame: CGRect(x: 0, y: 50, width:self.view.frame.width, height: self.view.frame.height/10))
+        firstnews.text = "最新消息:"
+        skView.addSubview(firstnews)
         
+        let firstnewstitle = UILabel(frame: CGRect(x: 100, y: 50, width:self.view.frame.width, height: self.view.frame.height/10))
+        firstnewstitle.text = temp.firstPageNewsTitle as String
+        skView.addSubview(firstnewstitle)
         
+        let firstnewsTime = UILabel(frame: CGRect(x: 100, y: 80, width:self.view.frame.width, height: self.view.frame.height/10))
+        firstnewsTime.text = temp.firstPageNewsDate as String
+        skView.addSubview(firstnewsTime)
         
+        //上層蓋著一個按鈕
+        let gotofirstNews = UIButton(frame: CGRect(x: 0, y: 60, width:self.view.frame.width, height: self.view.frame.height/10))
+        skView.addSubview(gotofirstNews)
+     
 
         
-        
-        
-        
-        
-        
-//        let btn1 = UIButton(frame: CGRect(x: 200, y: 200, width: 44, height: 44))
-//        btn1.backgroundColor = UIColor.blueColor()
-//        skView.addSubview(btn1)
-        
-//        print("skView.fram: \(skView.frame.height)")
-//        print("self.view.height\(self.view.frame.height)")
-//        print("self.view.width\(self.view.frame.width)")
 
+
+//泡泡設定
         let node = BubbleNode.instantiate()
             node.VC = self
             node.labelNode.text = "即時新聞"
@@ -143,6 +173,7 @@ class ViewController: UITabBarController{
         node13.labelNode.name = "旅遊新聞"
         floatingCollectionScene.addChild(node13)
         
+
         
     }
     
@@ -175,7 +206,17 @@ class ViewController: UITabBarController{
     }
     
     
-    
+    func gotoNewPage(sender:UIButton!){
+        print("goto newPage")
+        
+        let secondViewController:testViewController = testViewController()
+        
+//        self.presentViewController(secondViewController, animated: true, completion: nil)
+        self.navigationController?.pushViewController(secondViewController, animated: true)
+//        selectedViewController?.navigationController?.pushViewController(secondViewController, animated: true)
+        
+        
+    }
     
     
     

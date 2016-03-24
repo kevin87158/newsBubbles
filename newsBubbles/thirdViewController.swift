@@ -30,26 +30,29 @@ class thirdViewController: UIViewController,UITableViewDelegate,UITableViewDataS
     var imageArray = NSMutableArray()
     var myWebView = UIWebView()
 //    var urlForSegue = String()
+    let loadingView : UIActivityIndicatorView = UIActivityIndicatorView()
+
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
 
        
-//                skView = SKView(frame: UIScreen.mainScreen().applicationFrame)
-//                skView.backgroundColor = SKColor.blueColor()
-//                view.addSubview(skView)
+                skView = SKView(frame: UIScreen.mainScreen().applicationFrame)
+                skView.backgroundColor = SKColor.blueColor()
+                view.addSubview(skView)
 //
 //            
 //
-//                floatingCollectionScene = BubblesScene(size: skView.bounds.size)
-//                let navBarHeight = CGRectGetHeight(navigationController!.navigationBar.frame)
-//                let statusBarHeight = CGRectGetHeight(UIApplication.sharedApplication().statusBarFrame)
+                floatingCollectionScene = BubblesScene(size: skView.bounds.size)
+                let navBarHeight = CGRectGetHeight(navigationController!.navigationBar.frame)
+                let statusBarHeight = CGRectGetHeight(UIApplication.sharedApplication().statusBarFrame)
         
 //                let navBarHeight = CGRectGetHeight(self.accessibilityFrame.standardized)
 //                let statusBarHeight = CGRectGetHeight(self.accessibilityFrame.standardized)
-//                floatingCollectionScene.topOffset = navBarHeight + statusBarHeight
-//                skView.presentScene(floatingCollectionScene)  //泡泡呈現的位置
+                floatingCollectionScene.topOffset = navBarHeight + statusBarHeight
+                skView.presentScene(floatingCollectionScene)  //泡泡呈現的位置
 //
 //
 //                // navigation item 的測試
@@ -63,7 +66,7 @@ class thirdViewController: UIViewController,UITableViewDelegate,UITableViewDataS
 
     //第二種
 //                navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil)
-//                title = "返回"
+
 
 
 
@@ -73,21 +76,55 @@ class thirdViewController: UIViewController,UITableViewDelegate,UITableViewDataS
 //        leftItem.style = .Plain
 //        leftItem.title = "返回"
 //        leftItem = self.navigationItem.leftBarButtonItem!
+//
+//        
+        
 
-
+  
 
         
-//        loadingView()
+
       
+        
+        
         print("parse start")
+// 載入畫面
+        //方法一
+        //        loadingView()
+        //方法二
+//        progressHUD = ProgressHUD(text: "載入中請稍候")
+//        
+//        progressHUD!.show()
+//        
+//        self.view.addSubview((progressHUD as? UIView)!)
+//        (progressHUD as? UIVisualEffectView)?.hidden = true
+
         
-        let parseUrl = chooseUrl()
-        beginParsing(parseUrl)
-        tbData!.reloadData()  //更新tableView資料
-//        dismissViewControllerAnimated(false, completion: nil)
+//        loadingView.frame = CGRectMake(100, 100, 100, 100)
+//        loadingView.color = UIColor.blueColor()
+//        loadingView.transform = CGAffineTransformMakeScale(5.5,5.5)
+//        //        loadingView.hidesWhenStopped = true
+//        loadingView.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.Gray
+//        self.view.addSubview(loadingView)
         
-        tbData.delegate = self
-        tbData.dataSource = self
+        
+//        loadingView.startAnimating()
+        
+        
+        
+        
+        
+        
+//        let parseUrl = chooseUrl()
+//        beginParsing(parseUrl)
+//        tbData!.reloadData()  //更新tableView資料
+
+        
+ 
+        
+        
+//        tbData.delegate = self
+//        tbData.dataSource = self
 
     }
     
@@ -96,9 +133,11 @@ class thirdViewController: UIViewController,UITableViewDelegate,UITableViewDataS
     override func viewDidAppear(animated: Bool) {
         print("thirdView")
 //        if (temp.catgory) == "即時新聞"{
-//            print("第三頁抓到了新聞 嗚嗚")
+//            print("第三頁抓到了")
 //        }
         
+
+
 
     }
     
@@ -122,7 +161,7 @@ class thirdViewController: UIViewController,UITableViewDelegate,UITableViewDataS
         return 80
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
         return posts.count
     }
 
@@ -132,13 +171,9 @@ class thirdViewController: UIViewController,UITableViewDelegate,UITableViewDataS
         let cell:myTableViewCell = tableView.dequeueReusableCellWithIdentifier("Cell",forIndexPath: indexPath)  as! myTableViewCell
         
 
-        dispatch_async(dispatch_get_main_queue()) { () -> Void in
-        cell.setCell(self.posts.objectAtIndex(indexPath.row).valueForKey("title") as! NSString as String, setDate: self.posts.objectAtIndex(indexPath.row).valueForKey("date") as! NSString as String, setSource: self.posts.objectAtIndex(indexPath.row).valueForKey("source") as! String, setImg: self.imageArray.objectAtIndex(indexPath.row) as! String)
-        }
-        
-//          let image1 = UIImage(data: NSData(contentsOfURL: NSURL(string:getimg()!)!)
-//        cell.imageView?.image = image1
-      
+//        dispatch_async(dispatch_get_main_queue()) { () -> Void in
+//        cell.setCell(self.posts.objectAtIndex(indexPath.row).valueForKey("title") as! NSString as String, setDate: self.posts.objectAtIndex(indexPath.row).valueForKey("date") as! NSString as String, setSource: self.posts.objectAtIndex(indexPath.row).valueForKey("source") as! String, setImg: self.imageArray.objectAtIndex(indexPath.row) as! String)
+//        }
         
         return cell
         
@@ -219,7 +254,7 @@ class thirdViewController: UIViewController,UITableViewDelegate,UITableViewDataS
         }
         
     }
-    
+
     
     //標籤結束
     func parser(parser: NSXMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?){
@@ -248,27 +283,37 @@ class thirdViewController: UIViewController,UITableViewDelegate,UITableViewDataS
                 
             }
             posts.addObject(elements)  //將資料存入object 中
+            print(temp.firstPageNewsDate)
+            print(temp.firstPageNewsTitle)
+            temp.firstPageNewsTitle = title1 as String
+            temp.firstPageNewsDate = date as String
+            temp.firstPageNewsUrl = link as String
+            
         }
     }
-    
+    func parserDidEndDocument(parser: NSXMLParser) {
+        loadingView.stopAnimating()
+        print("end ")
+    }
     
     //自訂方法
     
-    func loadingView(){
-        let alert = UIAlertController(title: nil, message: "Please wait...", preferredStyle: .Alert)
-        
-        alert.view.tintColor = UIColor.blackColor()
-        let loadingIndicator: UIActivityIndicatorView = UIActivityIndicatorView(frame: CGRectMake(10, 5, 50, 50)) as UIActivityIndicatorView
-        loadingIndicator.hidesWhenStopped = true
-        loadingIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.Gray
-        loadingIndicator.startAnimating();
-        
-        alert.view.addSubview(loadingIndicator)
-        presentViewController(alert, animated: true, completion: nil)
-        
+//    func loadingView(){
+//        alert = UIAlertController(title: nil, message: "Please wait...", preferredStyle: .Alert)
+//        
+//        alert.view.tintColor = UIColor.blackColor()
+//        let loadingIndicator: UIActivityIndicatorView = UIActivityIndicatorView(frame: CGRectMake(10, 5, 50, 50)) as UIActivityIndicatorView
+//        loadingIndicator.hidesWhenStopped = true
+//        
+//        loadingIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.Gray
+//        loadingIndicator.startAnimating();
+//        
+//        alert.view.addSubview(loadingIndicator)
+//        presentViewController(alert, animated: true, completion: nil)
+    
 //        dismissViewControllerAnimated(false, completion: nil)
 //        dismissViewControllerAnimated(false,completion:nil)
-    }
+//    }
     
     
 

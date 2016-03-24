@@ -29,6 +29,26 @@ class secondViewController: UIViewController {
         
 
         
+//        
+//        let newFavorite = UIButton(frame: CGRect(x: 0, y: 0, width:self.view.frame.width, height: self.view.frame.height/10))
+//        newFavorite.backgroundColor = UIColor.redColor()
+//        newFavorite.titleLabel?.text = "news bubbles"
+//        skView.addSubview(newFavorite)
+        
+        
+        //push view controller 
+//        
+//        let addView:ViewController = ViewController()
+//        self.navigationController?.pushViewController(addView, animated: true)
+//        let lable:UILabel = UILabel()
+//        addView
+//        
+//        
+        
+        
+        
+        
+        self.navigationItem.title = "gkkgkg"
         
             let node = BubbleNode.instantiate()
             node.labelNode.text = "即時新聞"
