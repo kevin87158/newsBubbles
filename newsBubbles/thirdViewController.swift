@@ -80,8 +80,11 @@ class thirdViewController: UIViewController,UITableViewDelegate,UITableViewDataS
 //        loadingView()
       
         print("parse start")
-        beginParsing(chooseUrl())
+        
+        let parseUrl = chooseUrl()
+        beginParsing(parseUrl)
         tbData!.reloadData()  //更新tableView資料
+//        dismissViewControllerAnimated(false, completion: nil)
         
         tbData.delegate = self
         tbData.dataSource = self
@@ -95,6 +98,8 @@ class thirdViewController: UIViewController,UITableViewDelegate,UITableViewDataS
 //        if (temp.catgory) == "即時新聞"{
 //            print("第三頁抓到了新聞 嗚嗚")
 //        }
+        
+
     }
     
     
@@ -114,7 +119,7 @@ class thirdViewController: UIViewController,UITableViewDelegate,UITableViewDataS
     
     //table view
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 50
+        return 80
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -130,7 +135,11 @@ class thirdViewController: UIViewController,UITableViewDelegate,UITableViewDataS
         dispatch_async(dispatch_get_main_queue()) { () -> Void in
         cell.setCell(self.posts.objectAtIndex(indexPath.row).valueForKey("title") as! NSString as String, setDate: self.posts.objectAtIndex(indexPath.row).valueForKey("date") as! NSString as String, setSource: self.posts.objectAtIndex(indexPath.row).valueForKey("source") as! String, setImg: self.imageArray.objectAtIndex(indexPath.row) as! String)
         }
-
+        
+//          let image1 = UIImage(data: NSData(contentsOfURL: NSURL(string:getimg()!)!)
+//        cell.imageView?.image = image1
+      
+        
         return cell
         
     }
@@ -257,8 +266,8 @@ class thirdViewController: UIViewController,UITableViewDelegate,UITableViewDataS
         alert.view.addSubview(loadingIndicator)
         presentViewController(alert, animated: true, completion: nil)
         
-        dismissViewControllerAnimated(false, completion: nil)
-        dismissViewControllerAnimated(false,completion:nil)
+//        dismissViewControllerAnimated(false, completion: nil)
+//        dismissViewControllerAnimated(false,completion:nil)
     }
     
     

@@ -22,20 +22,33 @@ class ViewController: UITabBarController{
         
         //設定框架
         floatingCollectionScene = BubblesScene(size: skView.bounds.size)
-        let navBarHeight = CGRectGetHeight(navigationController!.navigationBar.frame)
-        let statusBarHeight = CGRectGetHeight(UIApplication.sharedApplication().statusBarFrame)
-//
+//        let navBarHeight = CGRectGetHeight(navigationController!.navigationBar.frame)
+//        let statusBarHeight = CGRectGetHeight(UIApplication.sharedApplication().statusBarFrame)
+////
         
         //這邊改寫成另種數值
 //        let navBarHeight = CGRectGetHeight(self.accessibilityFrame.standardized)
 //        let statusBarHeight = CGRectGetHeight(self.accessibilityFrame.standardized)
-        floatingCollectionScene.topOffset = navBarHeight + statusBarHeight
+//        floatingCollectionScene.topOffset = navBarHeight + statusBarHeight
         skView.presentScene(floatingCollectionScene)
 
 
         
+        let title = UILabel()
+        title.text = "news  Bubbles"
+        title.frame = CGRectMake(120, 50, self.view.frame.width, 20)
+        skView.bringSubviewToFront(title)
 
+        
+        
+        
+        
 
+        
+        
+        
+        
+        
         
 //        let btn1 = UIButton(frame: CGRect(x: 200, y: 200, width: 44, height: 44))
 //        btn1.backgroundColor = UIColor.blueColor()
