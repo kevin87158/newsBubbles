@@ -48,11 +48,11 @@ class ViewController: UITabBarController,NSXMLParserDelegate{
 //        skView.addSubview(btn2)
         
         
-        let btn3 = UIButton(frame: CGRect(x: 30, y: 300, width:100, height: 100))
-        btn3.backgroundColor = UIColor.blackColor()
-        btn3.titleLabel?.text = "gotoNewPage"
-        btn3.addTarget(self, action: "gotoNewPage:", forControlEvents: UIControlEvents.TouchUpInside)
-        skView.addSubview(btn3)
+//        let btn3 = UIButton(frame: CGRect(x: 30, y: 300, width:100, height: 100))
+//        btn3.backgroundColor = UIColor.blackColor()
+//        btn3.titleLabel?.text = "gotoNewPage"
+//        btn3.addTarget(self, action: "gotoNewPage:", forControlEvents: UIControlEvents.TouchUpInside)
+//        skView.addSubview(btn3)
         
         
 
