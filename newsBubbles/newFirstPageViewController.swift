@@ -20,6 +20,10 @@ class newFirstPageViewController: UIViewController {
         skView.backgroundColor = SKColor.redColor()
         view.addSubview(skView)
         
+        let btn1 = UIButton(frame: CGRect(x: 0, y: 630, width:self.view.frame.width, height: self.view.frame.height))
+        btn1.backgroundColor = UIColor.blueColor()
+        skView.addSubview(btn1)
+        
         
         
 //        //兩個漸層色

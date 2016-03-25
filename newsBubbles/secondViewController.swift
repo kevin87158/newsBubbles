@@ -27,6 +27,11 @@ class secondViewController: UIViewController {
         floatingCollectionScene.topOffset = navBarHeight + statusBarHeight
         skView.presentScene(floatingCollectionScene)
         
+        
+        let btn1 = UIButton(frame: CGRect(x: 0, y: 630, width:self.view.frame.width, height: self.view.frame.height))
+        btn1.backgroundColor = UIColor.blueColor()
+        skView.addSubview(btn1)
+        
 
         
 //        

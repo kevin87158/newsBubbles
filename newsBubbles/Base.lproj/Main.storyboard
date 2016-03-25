@@ -82,7 +82,7 @@
         <!--Third View Controller-->
         <scene sceneID="o0A-6S-EZb">
             <objects>
-                <viewController storyboardIdentifier="thirdViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="z1T-50-nNa" customClass="thirdViewController" customModule="newsBubbles" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="thirdViewController" modalTransitionStyle="flipHorizontal" useStoryboardIdentifierAsRestorationIdentifier="YES" id="z1T-50-nNa" customClass="thirdViewController" customModule="newsBubbles" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="5ki-V4-4bf"/>
                         <viewControllerLayoutGuide type="bottom" id="psb-Jd-82L"/>
@@ -146,7 +146,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MH5-HB-pd3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1434" y="4175"/>
+            <point key="canvasLocation" x="1434" y="3933"/>
         </scene>
         <!--Web View Controller-->
         <scene sceneID="3kk-r8-Cnf">
