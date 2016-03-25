@@ -89,70 +89,70 @@ class appleViewController: UITabBarController,NSXMLParserDelegate{
         node.VC = self
         node.labelNode.text = "最新"
         node.labelNode.name = "最新即時新聞"
-        node.fillColor = UIColor.redColor()
+        node.fillColor = UIColor(red: 0, green: 1, blue: 1, alpha: 0.1)
         floatingCollectionScene.addChild(node)
         
         let node1 = BubbleNode.instantiate()
         node1.VC = self
         node1.labelNode.text = "頭條"
         node1.labelNode.name = "頭條新聞"
-        node1.fillColor = UIColor.redColor()
+        node1.fillColor = UIColor(red: 0, green: 1, blue: 1, alpha: 0.1)
         floatingCollectionScene.addChild(node1)
         
         let node2 = BubbleNode.instantiate()
         node2.VC = self
         node2.labelNode.text = "娛樂名人"
         node2.labelNode.name = "娛樂名人新聞"
-        node2.fillColor = UIColor.redColor()
+        node2.fillColor = UIColor(red: 0, green: 1, blue: 1, alpha: 0.1)
         floatingCollectionScene.addChild(node2)
         
         let node3 = BubbleNode.instantiate()
         node3.VC = self
         node3.labelNode.text = "國際頭條"
         node3.labelNode.name = "國際頭條新聞"
-        node3.fillColor = UIColor.redColor()
+        node3.fillColor = UIColor(red: 0, green: 1, blue: 1, alpha: 0.1)
         floatingCollectionScene.addChild(node3)
         
         let node4 = BubbleNode.instantiate()
         node4.VC = self
         node4.labelNode.text = "體育焦點"
         node4.labelNode.name = "體育焦點"
-        node4.fillColor = UIColor.redColor()
+        node4.fillColor = UIColor(red: 0, green: 1, blue: 1, alpha: 0.1)
         floatingCollectionScene.addChild(node4)
         
         let node5 = BubbleNode.instantiate()
         node5.VC = self
         node5.labelNode.text = "財經焦點"
         node5.labelNode.name = "財經焦點"
-        node5.fillColor = UIColor.redColor()
+        node5.fillColor = UIColor(red: 0, green: 1, blue: 1, alpha: 0.1)
         floatingCollectionScene.addChild(node5)
         
         let node6 = BubbleNode.instantiate()
         node6.VC = self
         node6.labelNode.text = "科技3C"
         node6.labelNode.name = "科技3C新聞"
-        node6.fillColor = UIColor.redColor()
+        node6.fillColor = UIColor(red: 0, green: 1, blue: 1, alpha: 0.1)
         floatingCollectionScene.addChild(node6)
         
         let node7 = BubbleNode.instantiate()
         node7.VC = self
         node7.labelNode.text = "地產焦點"
         node7.labelNode.name = "地產焦點"
-        node7.fillColor = UIColor.redColor()
+        node7.fillColor = UIColor(red: 0, green: 1, blue: 1, alpha: 0.1)
         floatingCollectionScene.addChild(node7)
         
         let node8 = BubbleNode.instantiate()
         node8.VC = self
         node8.labelNode.text = "美食天地"
         node8.labelNode.name = "美食天地"
-        node8.fillColor = UIColor.redColor()
+        node8.fillColor = UIColor(red: 0, green: 1, blue: 1, alpha: 0.1)
         floatingCollectionScene.addChild(node8)
         
         let node9 = BubbleNode.instantiate()
         node9.VC = self
         node9.labelNode.text = "旅遊與探險"
         node9.labelNode.name = "旅遊與探險"
-        node9.fillColor = UIColor.redColor()
+        node9.fillColor = UIColor(red: 0, green: 1, blue: 1, alpha: 0.1)
         floatingCollectionScene.addChild(node9)
         
     }

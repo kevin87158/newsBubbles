@@ -16,13 +16,22 @@ class newFirstPageViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-
-        
-        
         skView = SKView(frame: UIScreen.mainScreen().bounds)
-        skView.backgroundColor = SKColor.whiteColor()
+        skView.backgroundColor = SKColor.redColor()
         view.addSubview(skView)
+        
+        
+        
+//        //兩個漸層色
+//        let color1 = UIColor(red: 0, green: 0, blue: 0.68, alpha: 1)
+//        let color2 = UIColor(red: 0, green: 0, blue: 0.11, alpha: 1)
+//        //漸層色的CALayer
+//        let gradient = CAGradientLayer()
+//        gradient.frame = self.skView.frame
+//        gradient.colors = [color1.CGColor,color2.CGColor]
+//        //加到畫面
+//        self.skView.layer.insertSublayer(gradient,above:self.skView.layer)
+        
         
         //設定框架
         floatingCollectionScene = BubblesScene(size: skView.bounds.size)
@@ -32,7 +41,7 @@ class newFirstPageViewController: UIViewController {
         
         
         //設定navigation
-        self.navigationItem.title = "所有新聞parse"
+        self.navigationItem.title = "NEWS"
         
         
         //新增網站泡泡
@@ -40,24 +49,22 @@ class newFirstPageViewController: UIViewController {
         yahooNewsBubble.VC = self
         yahooNewsBubble.labelNode.text = "yahoo新聞"
         yahooNewsBubble.labelNode.name = "yahoo新聞"
-        yahooNewsBubble.fillColor = UIColor.purpleColor()
+        yahooNewsBubble.fillColor = UIColor(red: 1, green: 1, blue: 0, alpha: 0.1)
         floatingCollectionScene.addChild(yahooNewsBubble)
         
         let appleNewsBubble = BubbleNode.instantiate()
         appleNewsBubble.VC = self
         appleNewsBubble.labelNode.text = "蘋果新聞"
         appleNewsBubble.labelNode.name = "蘋果新聞"
-        appleNewsBubble.fillColor = UIColor.redColor()
+        appleNewsBubble.fillColor = UIColor(red: 0, green: 1, blue: 1, alpha: 0.1)
         floatingCollectionScene.addChild(appleNewsBubble)
         
         let udnNewsBubble = BubbleNode.instantiate()
         udnNewsBubble.VC = self
         udnNewsBubble.labelNode.text = "udn新聞"
         udnNewsBubble.labelNode.name = "udn新聞"
-        udnNewsBubble.fillColor = UIColor.orangeColor()
+        udnNewsBubble.fillColor = UIColor(red: 1, green: 0, blue: 1, alpha: 0.1)
         floatingCollectionScene.addChild(udnNewsBubble)
-        
-        
         
         
         
