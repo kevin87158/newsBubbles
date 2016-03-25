@@ -11,6 +11,7 @@ import SpriteKit
 
 class thirdViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,NSXMLParserDelegate{
     private var skView: SKView!
+    @IBOutlet weak var loading: UIActivityIndicatorView!
     private var floatingCollectionScene: BubblesScene!
     
     @IBOutlet weak var tbData: UITableView!
@@ -118,10 +119,19 @@ class thirdViewController: UIViewController,UITableViewDelegate,UITableViewDataS
         
         
         
+
         
-        let parseUrl = chooseUrl()
-        beginParsing(parseUrl)
-        tbData!.reloadData()  //更新tableView資料
+        loading.startAnimating()
+        dispatch_async(dispatch_get_main_queue()) { () -> Void in
+            
+        
+            let parseUrl = self.chooseUrl()
+            self.beginParsing(parseUrl)
+            self.tbData!.reloadData()  //更新tableView資料
+            self.loading.stopAnimating()
+        
+        }
+        
 
         
  

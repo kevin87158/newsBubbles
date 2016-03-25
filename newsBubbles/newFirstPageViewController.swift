@@ -17,6 +17,7 @@ class newFirstPageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+
         
         skView = SKView(frame: UIScreen.mainScreen().bounds)
         view.addSubview(skView)

@@ -17,8 +17,18 @@ class webViewController: UIViewController,UIWebViewDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        myWebView.loadRequest(NSURLRequest(URL: NSURL(string:temp.loadUrl)!))
+        loading.startAnimating()
+//        start(myWebView)
+        
+//        dispatch_async(dispatch_get_main_queue()) { () -> Void in
+        
+            self.myWebView.loadRequest(NSURLRequest(URL: NSURL(string:temp.loadUrl)!))
+//            self.loading.stopAnimating()
+//            self.loading.hidesWhenStopped = true
+//        }
 
+        
+//        finish(myWebView)
 
     }
 
@@ -31,8 +41,9 @@ class webViewController: UIViewController,UIWebViewDelegate{
         
 //    }
     
- 
-    func start(_:UIWebView){
+    
+    
+    func start(_:UIWebView){ //
         loading.hidden = false
         loading.startAnimating()
         print("the web view is start")

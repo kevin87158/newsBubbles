@@ -21,6 +21,7 @@ class ViewController: UITabBarController,NSXMLParserDelegate{
         skView.backgroundColor = SKColor.whiteColor()
         view.addSubview(skView)
         
+
         
         
         //設定框架
@@ -63,9 +64,12 @@ class ViewController: UITabBarController,NSXMLParserDelegate{
 //最新的新聞內容 與上列設定
         
         //取得最新的新聞內容 只取最新的一筆
-        var getfirstNews:thirdViewController = thirdViewController()
-        let news = getfirstNews.beginParsing("https://tw.news.yahoo.com/rss/")
-      
+
+            var getfirstNews:thirdViewController = thirdViewController()
+            let news = getfirstNews.beginParsing("https://tw.news.yahoo.com/rss/")
+           
+    
+     
         
 
         

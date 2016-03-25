@@ -13,6 +13,10 @@ import SpriteKit
 class BubbleNode: SIFloatingNode{
     var labelNode = SKLabelNode(fontNamed: "")
     var VC:UIViewController?
+    var gotoYahooViewController:UIViewController?
+    var gotoAppleViewController:UIViewController?
+    var  gotoUdnViewController:UIViewController?
+    var gotoThirdViewController:UIViewController?
     
     class func instantiate() -> BubbleNode! {
         let node = BubbleNode(circleOfRadius: 50)
@@ -42,14 +46,17 @@ class BubbleNode: SIFloatingNode{
         node.addChild(node.labelNode)
     }
     
-    override func selectingAnimation() -> SKAction? {
+    
+    
+    
+    override func selectingAnimation() -> SKAction? { //
         removeActionForKey(BubbleNode.removingKey)
 //
         switch self.labelNode.name!{
         case "即時新聞":
                 temp.catgory = "即時新聞"
                 print("泡泡選擇:即時新聞")
-                showTableView()
+//                showTableView()
              
             break
             
@@ -201,11 +208,11 @@ class BubbleNode: SIFloatingNode{
             break
             
 //udnNews
-            case "要聞" :
-                temp.catgory = "要聞"
-                print("泡泡選擇:要聞")
-                showTableView()
-                break
+        case "要聞" :
+            temp.catgory = "要聞"
+            print("泡泡選擇:要聞")
+            showTableView()
+            break
         case "udn娛樂新聞" :
             temp.catgory = "udn娛樂新聞"
             print("泡泡選擇:udn娛樂新聞")
@@ -221,7 +228,7 @@ class BubbleNode: SIFloatingNode{
             print("泡泡選擇:udn國際新聞")
             showTableView()
             break
-        case "要聞" :
+        case "運動新聞" :
             temp.catgory = "運動新聞"
             print("泡泡選擇:運動新聞")
             showTableView()
@@ -247,8 +254,9 @@ class BubbleNode: SIFloatingNode{
             
         }
         print("goto  tableViewpage ")
-        return SKAction.scaleTo(1.2, duration: 1)
-
+        
+        SKAction.scaleTo(1.2, duration: 1)
+        return   SKAction.scaleTo(1.2, duration: 1)
     }
     
     override func normalizeAnimation() -> SKAction? {
@@ -266,25 +274,35 @@ class BubbleNode: SIFloatingNode{
 //    
 //        let thirdViewController = self.storyboard.instantiateViewControllerWithIdentifier("thirdViewController")
 //        
-        
-        let gotoThirdViewController = self.VC?.storyboard?.instantiateViewControllerWithIdentifier("thirdViewController")
+        if gotoThirdViewController == nil{
+            gotoThirdViewController = self.VC?.storyboard?.instantiateViewControllerWithIdentifier("thirdViewController")
+        }
         self.VC?.navigationController?.pushViewController(gotoThirdViewController!, animated: true)
+        
 //        let title = self.VC?.storyboard?.instantiateViewControllerWithIdentifier("thirdViewController")
 //        title?.navigationItem.title = "即時新聞"
     }
 
     func showYahooNewsBubbles(){
-        let gotoYahooViewController = self.VC?.storyboard?.instantiateViewControllerWithIdentifier("ViewController")
+        if gotoYahooViewController == nil{
+            gotoYahooViewController = self.VC?.storyboard?.instantiateViewControllerWithIdentifier("ViewController")
+        }
+        
+        
         self.VC?.navigationController?.pushViewController(gotoYahooViewController!, animated: true)
     }
     
     func showAppleNewsBubbles(){
-        let gotoAppleViewController = self.VC?.storyboard?.instantiateViewControllerWithIdentifier("appleViewController")
+        if  gotoAppleViewController  == nil{
+         gotoAppleViewController = self.VC?.storyboard?.instantiateViewControllerWithIdentifier("appleViewController")
+        }
         self.VC?.navigationController?.pushViewController(gotoAppleViewController!, animated: true)
     }
     
     func showUdnNewsBubbles(){
-        let gotoUdnViewController = self.VC?.storyboard?.instantiateViewControllerWithIdentifier("udnViewController")
+        if  gotoUdnViewController == nil {
+        gotoUdnViewController = self.VC?.storyboard?.instantiateViewControllerWithIdentifier("udnViewController")
+        }
         self.VC?.navigationController?.pushViewController(gotoUdnViewController!, animated: true)
     }
     

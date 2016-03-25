@@ -135,6 +135,10 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="eXh-gL-Ri3">
+                                <rect key="frame" x="290" y="290" width="20" height="20"/>
+                                <color key="color" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -142,6 +146,7 @@
                     <navigationItem key="navigationItem" id="6Wk-EQ-NsY"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="loading" destination="eXh-gL-Ri3" id="vmX-OZ-jc3"/>
                         <outlet property="tbData" destination="Kxu-O8-6it" id="APz-J6-h8a"/>
                     </connections>
                 </viewController>
@@ -161,6 +166,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="yKT-Kk-VMe">
+                                <rect key="frame" x="281.5" y="291.5" width="37" height="37"/>
+                                <color key="color" red="0.13725490868091583" green="1" blue="0.17254902422428131" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3eb-0i-Joc">
                                 <rect key="frame" x="0.0" y="20" width="600" height="580"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
@@ -168,19 +177,15 @@
                                     <outlet property="delegate" destination="EBG-GH-gxo" id="Aqq-OX-cCo"/>
                                 </connections>
                             </webView>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="yKT-Kk-VMe">
-                                <rect key="frame" x="283" y="290" width="37" height="37"/>
-                                <color key="color" red="0.13725490868091583" green="1" blue="0.17254902422428131" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="yKT-Kk-VMe" firstAttribute="top" secondItem="Wgu-VY-Nbq" secondAttribute="bottom" constant="270" id="BCC-BL-0t1"/>
                             <constraint firstItem="3eb-0i-Joc" firstAttribute="bottom" secondItem="Epo-in-3aJ" secondAttribute="top" id="JnC-hP-Uge"/>
-                            <constraint firstItem="yKT-Kk-VMe" firstAttribute="leading" secondItem="yMZ-Uh-JfI" secondAttribute="leading" constant="283" id="Xxh-OJ-Qmh"/>
+                            <constraint firstItem="yKT-Kk-VMe" firstAttribute="centerY" secondItem="3eb-0i-Joc" secondAttribute="centerY" id="QpH-a1-XzO"/>
                             <constraint firstAttribute="trailing" secondItem="3eb-0i-Joc" secondAttribute="trailing" id="dkC-yL-dqd"/>
                             <constraint firstItem="3eb-0i-Joc" firstAttribute="top" secondItem="Wgu-VY-Nbq" secondAttribute="bottom" id="tQF-Ft-KMu"/>
                             <constraint firstItem="3eb-0i-Joc" firstAttribute="leading" secondItem="yMZ-Uh-JfI" secondAttribute="leading" id="w3g-uR-ctu"/>
+                            <constraint firstItem="yKT-Kk-VMe" firstAttribute="centerX" secondItem="3eb-0i-Joc" secondAttribute="centerX" id="zmJ-Lh-L0g"/>
                         </constraints>
                     </view>
                     <connections>
@@ -190,7 +195,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IxK-Fu-0bd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1434" y="4885"/>
+            <point key="canvasLocation" x="1439" y="4657"/>
         </scene>
         <!--Second View Controller-->
         <scene sceneID="AEZ-Ob-tbR">
