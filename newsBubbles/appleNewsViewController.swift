@@ -38,7 +38,7 @@ class appleViewController: UITabBarController,NSXMLParserDelegate{
         
         
         let btn1 = UIButton(frame: CGRect(x: 0, y: 630, width:self.view.frame.width, height: self.view.frame.height))
-        btn1.backgroundColor = UIColor.blueColor()
+        btn1.backgroundColor = UIColor(red: 0, green: 1, blue: 1, alpha: 0.4)
         skView.addSubview(btn1)
         
         //        let btn2 = UIButton(frame: CGRect(x: 0, y: 0, width:self.view.frame.width, height: self.view.frame.height/10))

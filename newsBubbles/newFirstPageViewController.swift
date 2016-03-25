@@ -21,10 +21,10 @@ class newFirstPageViewController: UIViewController {
         skView = SKView(frame: UIScreen.mainScreen().bounds)
         view.addSubview(skView)
         
-        let btn1 = UIButton(frame: CGRect(x: 0, y: 630, width:self.view.frame.width, height: self.view.frame.height))
-        btn1.backgroundColor = UIColor.blueColor()
-        skView.addSubview(btn1)
-        
+//        let btn1 = UIButton(frame: CGRect(x: 0, y: 630, width:self.view.frame.width, height: self.view.frame.height))
+//        btn1.backgroundColor = UIColor.blueColor()
+//        skView.addSubview(btn1)
+//        
         
         
 //        //兩個漸層色
@@ -52,7 +52,7 @@ class newFirstPageViewController: UIViewController {
         yahooNewsBubble.VC = self
         yahooNewsBubble.labelNode.text = "yahoo新聞"
         yahooNewsBubble.labelNode.name = "yahoo新聞"
-        yahooNewsBubble.fillColor = UIColor(red: 1, green: 1, blue: 0, alpha: 0.1)
+        yahooNewsBubble.fillColor = UIColor(red: 1, green: 1, blue: 0, alpha: 0.4)
         floatingCollectionScene.addChild(yahooNewsBubble)
         
         let appleNewsBubble = BubbleNode.instantiate()
