@@ -30,13 +30,14 @@ class myTableViewCell: UITableViewCell {
     
     
     func setCell(setTittle:String,setDate:String,setSource:String,setImg:String){
-
         
-        let image1 = UIImage(data: NSData(contentsOfURL: NSURL(string: setImg)!)!)
-        self.img.image = image1
-        self.img.contentMode = .ScaleAspectFit
-        self.img.frame = CGRectMake(0, 0, self.frame.size.width/2, self.frame.size.height/2)
 
+    let image1 = UIImage(data: NSData(contentsOfURL: NSURL(string: setImg)!)!)
+    self.img.image = image1
+    self.img.contentMode = .ScaleAspectFit
+    self.img.frame = CGRectMake(0, 0, self.frame.size.width/2, self.frame.size.height/2)
+        
+       
         
         self.imageView?.hidden
         

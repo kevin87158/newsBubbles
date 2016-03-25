@@ -18,19 +18,15 @@ class newFirstPageViewController: UIViewController {
         super.viewDidLoad()
 
 
-        
-        
+
         skView = SKView(frame: UIScreen.mainScreen().bounds)
-        skView.backgroundColor = SKColor.whiteColor()
         view.addSubview(skView)
         
         //設定框架
         floatingCollectionScene = BubblesScene(size: skView.bounds.size)
         skView.presentScene(floatingCollectionScene)
-        
-        
-        
-        
+
+        skView.backgroundColor = UIColor.blackColor()
         //設定navigation
         self.navigationItem.title = "所有新聞parse"
         

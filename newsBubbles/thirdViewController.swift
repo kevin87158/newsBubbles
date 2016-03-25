@@ -174,11 +174,14 @@ class thirdViewController: UIViewController,UITableViewDelegate,UITableViewDataS
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell:myTableViewCell = tableView.dequeueReusableCellWithIdentifier("Cell",forIndexPath: indexPath)  as! myTableViewCell
         
-
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) { () -> Void in
+            
         dispatch_async(dispatch_get_main_queue()) { () -> Void in
         cell.setCell(self.posts.objectAtIndex(indexPath.row).valueForKey("title") as! NSString as String, setDate: self.posts.objectAtIndex(indexPath.row).valueForKey("date") as! NSString as String, setSource: self.posts.objectAtIndex(indexPath.row).valueForKey("source") as! String, setImg: self.imageArray.objectAtIndex(indexPath.row) as! String)
+            
         }
         
+        }
         return cell
         
     }
@@ -343,7 +346,7 @@ class thirdViewController: UIViewController,UITableViewDelegate,UITableViewDataS
     }
     
     
-    func getimg(newsUrl:String)-> String{
+    func getimg(newsUrl:String){
         
         //開始找到img src 的位置
         let imageStringStart = "img"
@@ -377,7 +380,6 @@ class thirdViewController: UIViewController,UITableViewDelegate,UITableViewDataS
             targetString = "http://www.majorgeeks.com/news/file/903_yahoo-new-logo.jpg"
         }
         imageArray.addObject(targetString)
-        return targetString
     }
     
     func beginParsing(urlstring:String){

@@ -60,7 +60,7 @@
             </objects>
             <point key="canvasLocation" x="2130" y="3297"/>
         </scene>
-        <!--New First Page View Controller-->
+        <!--Item-->
         <scene sceneID="brH-ev-alJ">
             <objects>
                 <viewController id="ZnF-Le-2Ly" customClass="newFirstPageViewController" customModule="newsBubbles" customModuleProvider="target" sceneMemberID="viewController">
@@ -73,11 +73,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="52h-ia-z7U"/>
                     <navigationItem key="navigationItem" id="Fvn-iS-hiF"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BW2-PB-ADv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1434" y="2580"/>
+            <point key="canvasLocation" x="1439" y="2604"/>
         </scene>
         <!--Third View Controller-->
         <scene sceneID="o0A-6S-EZb">
@@ -99,7 +100,7 @@
                                         <rect key="frame" x="0.0" y="28" width="600" height="102"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="EZu-Ul-B2y" id="9Cs-RZ-7uY">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="102"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="101.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k2Y-PU-cnQ">
@@ -115,7 +116,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xEd-oz-EnI">
-                                                    <rect key="frame" x="8" y="-1" width="106" height="95"/>
+                                                    <rect key="frame" x="8" y="-1" width="106" height="94.5"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CCy-Mn-CLG">
                                                     <rect key="frame" x="305" y="52" width="239" height="26"/>
@@ -146,7 +147,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MH5-HB-pd3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1434" y="4175"/>
+            <point key="canvasLocation" x="1439" y="4055"/>
         </scene>
         <!--Web View Controller-->
         <scene sceneID="3kk-r8-Cnf">
@@ -160,20 +161,36 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3eb-0i-Joc">
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3eb-0i-Joc">
                                 <rect key="frame" x="0.0" y="20" width="600" height="580"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                                <connections>
+                                    <outlet property="delegate" destination="EBG-GH-gxo" id="Aqq-OX-cCo"/>
+                                </connections>
                             </webView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="yKT-Kk-VMe">
+                                <rect key="frame" x="283" y="290" width="37" height="37"/>
+                                <color key="color" red="0.13725490868091583" green="1" blue="0.17254902422428131" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="yKT-Kk-VMe" firstAttribute="top" secondItem="Wgu-VY-Nbq" secondAttribute="bottom" constant="270" id="BCC-BL-0t1"/>
+                            <constraint firstItem="3eb-0i-Joc" firstAttribute="bottom" secondItem="Epo-in-3aJ" secondAttribute="top" id="JnC-hP-Uge"/>
+                            <constraint firstItem="yKT-Kk-VMe" firstAttribute="leading" secondItem="yMZ-Uh-JfI" secondAttribute="leading" constant="283" id="Xxh-OJ-Qmh"/>
+                            <constraint firstAttribute="trailing" secondItem="3eb-0i-Joc" secondAttribute="trailing" id="dkC-yL-dqd"/>
+                            <constraint firstItem="3eb-0i-Joc" firstAttribute="top" secondItem="Wgu-VY-Nbq" secondAttribute="bottom" id="tQF-Ft-KMu"/>
+                            <constraint firstItem="3eb-0i-Joc" firstAttribute="leading" secondItem="yMZ-Uh-JfI" secondAttribute="leading" id="w3g-uR-ctu"/>
+                        </constraints>
                     </view>
                     <connections>
+                        <outlet property="loading" destination="yKT-Kk-VMe" id="eZH-wd-qG1"/>
                         <outlet property="myWebView" destination="3eb-0i-Joc" id="9IJ-1s-3O7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IxK-Fu-0bd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1434" y="4572"/>
+            <point key="canvasLocation" x="1434" y="4885"/>
         </scene>
         <!--Second View Controller-->
         <scene sceneID="AEZ-Ob-tbR">
@@ -230,7 +247,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="CLh-5S-sii" kind="relationship" relationship="viewControllers" id="epg-1n-9Rs"/>
+                        <segue destination="CLh-5S-sii" kind="relationship" relationship="viewControllers" id="iFI-yg-dtl"/>
                         <segue destination="fk5-AI-F3s" kind="relationship" relationship="viewControllers" id="g49-Di-oO2"/>
                     </connections>
                 </tabBarController>
@@ -250,12 +267,12 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="ZnF-Le-2Ly" kind="relationship" relationship="rootViewController" id="eIv-Yx-fsY"/>
+                        <segue destination="ZnF-Le-2Ly" kind="relationship" relationship="rootViewController" id="qSu-8f-T9d"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Fv-UG-xNn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1434" y="1826"/>
+            <point key="canvasLocation" x="1439" y="1826"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Knu-EM-sLk">

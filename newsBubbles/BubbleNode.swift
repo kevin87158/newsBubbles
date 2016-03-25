@@ -140,9 +140,9 @@ class BubbleNode: SIFloatingNode{
             
             
 //apple news
-        case "最新新聞" :
-            temp.catgory = "最新新聞"
-            print("泡泡選擇:最新新聞")
+        case "最新即時新聞" :
+            temp.catgory = "最新即時新聞"
+            print("泡泡選擇:最新即時新聞")
             showTableView()
             break
             
@@ -238,10 +238,11 @@ class BubbleNode: SIFloatingNode{
         case "udn新聞":
             showUdnNewsBubbles()    //到UdnNews 的類別選擇
             break
+            
         default:
-            temp.catgory = "即時新聞"
-            print("泡泡選擇:即時新聞")
-            showTableView()
+//            temp.catgory = "即時新聞"
+//            print("泡泡選擇:即時新聞")
+//            showTableView()
             break
             
         }

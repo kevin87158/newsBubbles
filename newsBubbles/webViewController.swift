@@ -8,9 +8,11 @@
 
 import UIKit
 
-class webViewController: UIViewController {
+class webViewController: UIViewController,UIWebViewDelegate{
 
     @IBOutlet weak var myWebView: UIWebView!
+    
+    @IBOutlet weak var loading: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +31,17 @@ class webViewController: UIViewController {
         
 //    }
     
+ 
+    func start(_:UIWebView){
+        loading.hidden = false
+        loading.startAnimating()
+        print("the web view is start")
+    }
+    func finish(_:UIWebView){
+        loading.hidden = true
+        loading.stopAnimating()
+        print("the web view is stop")
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
