@@ -59,15 +59,45 @@ class newFirstPageViewController: UIViewController {
         appleNewsBubble.VC = self
         appleNewsBubble.labelNode.text = "蘋果新聞"
         appleNewsBubble.labelNode.name = "蘋果新聞"
-        appleNewsBubble.fillColor = UIColor(red: 0, green: 1, blue: 1, alpha: 0.1)
+        appleNewsBubble.fillColor = UIColor(red: 0, green: 1, blue: 1, alpha: 0.3)
         floatingCollectionScene.addChild(appleNewsBubble)
         
         let udnNewsBubble = BubbleNode.instantiate()
         udnNewsBubble.VC = self
         udnNewsBubble.labelNode.text = "udn新聞"
         udnNewsBubble.labelNode.name = "udn新聞"
-        udnNewsBubble.fillColor = UIColor(red: 1, green: 0, blue: 1, alpha: 0.1)
+        udnNewsBubble.fillColor = UIColor(red: 1, green: 0, blue: 1, alpha: 0.3)
         floatingCollectionScene.addChild(udnNewsBubble)
+        
+        let NewsBubble1 = BubbleNode.instantiate()
+        NewsBubble1.VC = self
+        NewsBubble1.labelNode.text = "東森新聞"
+        NewsBubble1.labelNode.name = "東森新聞"
+        NewsBubble1.fillColor = UIColor(red: 1, green: 0, blue: 0, alpha: 0.3)
+        floatingCollectionScene.addChild(NewsBubble1)
+        
+        let NewsBubble2 = BubbleNode.instantiate()
+        NewsBubble2.VC = self
+        NewsBubble2.labelNode.text = "三立新聞"
+        NewsBubble2.labelNode.name = "三立新聞"
+        NewsBubble2.fillColor = UIColor(red: 0, green: 0, blue: 1, alpha: 0.3)
+        floatingCollectionScene.addChild(NewsBubble2)
+        
+        let NewsBubble3 = BubbleNode.instantiate()
+        NewsBubble3.VC = self
+        NewsBubble3.labelNode.text = "今日新聞"
+        NewsBubble3.labelNode.name = "今日新聞"
+        NewsBubble3.fillColor = UIColor(red: 0, green: 1, blue: 0, alpha: 0.3)
+        floatingCollectionScene.addChild(NewsBubble3)
+        
+        let NewsBubble4 = BubbleNode.instantiate()
+        NewsBubble4.VC = self
+        NewsBubble4.labelNode.text = "中天新聞"
+        NewsBubble4.labelNode.name = "中天新聞"
+        NewsBubble4.fillColor = UIColor(red: 0.6, green: 0.1, blue: 0.1, alpha: 0.5)
+        floatingCollectionScene.addChild(NewsBubble4)
+        
+        
         
         
         
