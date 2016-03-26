@@ -255,16 +255,18 @@ class BubbleNode: SIFloatingNode{
         }
         print("goto  tableViewpage ")
         
-        return   SKAction.scaleTo(1.2, duration: 1)
+
+        
+        return   SKAction.scaleTo(1.5, duration: 1)
 
     }
     
-    override func normalizeAnimation() -> SKAction? {
-        removeActionForKey(BubbleNode.removingKey)
-        
-        return SKAction.scaleTo(1, duration: 0.2)
-        
-    }
+//    override func normalizeAnimation() -> SKAction? {
+//        removeActionForKey(BubbleNode.removingKey)
+//        
+//        return SKAction.scaleTo(1.5, duration: 0.2)
+//        
+//    }
     
     func showTableView(){
 //        let storyboard = UIStoryboard(name: "Main", bundle: nil)

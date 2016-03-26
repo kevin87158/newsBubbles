@@ -67,6 +67,7 @@ class udnViewController: UITabBarController,NSXMLParserDelegate{
         node.VC = self
         node.labelNode.text = "重要新聞"
         node.labelNode.name = "要聞"
+        node.setScale(1.3)
         node.fillColor = UIColor(red: 1, green: 0, blue: 1, alpha: 0.3)
         floatingCollectionScene.addChild(node)
         
@@ -74,6 +75,7 @@ class udnViewController: UITabBarController,NSXMLParserDelegate{
         node1.VC = self
         node1.labelNode.text = "娛樂"
         node1.labelNode.name = "udn娛樂新聞"
+        node1.setScale(0.9)
         node1.fillColor = UIColor(red: 1, green: 0, blue: 1, alpha: 0.3)
         floatingCollectionScene.addChild(node1)
         
@@ -81,6 +83,7 @@ class udnViewController: UITabBarController,NSXMLParserDelegate{
         node2.VC = self
         node2.labelNode.text = "地方"
         node2.labelNode.name = "udn地方新聞"
+        node2.setScale(1.1)
         node2.fillColor = UIColor(red: 1, green: 0, blue: 1, alpha: 0.3)
         floatingCollectionScene.addChild(node2)
         
@@ -88,6 +91,7 @@ class udnViewController: UITabBarController,NSXMLParserDelegate{
         node3.VC = self
         node3.labelNode.text = "國際"
         node3.labelNode.name = "udn國際新聞"
+        node3.setScale(1.3)
         node3.fillColor = UIColor(red: 1, green: 0, blue: 1, alpha: 0.3)
         floatingCollectionScene.addChild(node3)
         
@@ -95,6 +99,7 @@ class udnViewController: UITabBarController,NSXMLParserDelegate{
         node4.VC = self
         node4.labelNode.text = "運動"
         node4.labelNode.name = "運動新聞"
+        node4.setScale(1.2)
         node4.fillColor = UIColor(red: 1, green: 0, blue: 1, alpha: 0.3)
         floatingCollectionScene.addChild(node4)
         
@@ -102,6 +107,7 @@ class udnViewController: UITabBarController,NSXMLParserDelegate{
         node5.VC = self
         node5.labelNode.text = "教育"
         node5.labelNode.name = "教育新聞"
+        node5.setScale(0.8)
         node5.fillColor = UIColor(red: 1, green: 0, blue: 1, alpha: 0.3)
         floatingCollectionScene.addChild(node5)
         
@@ -113,6 +119,7 @@ class udnViewController: UITabBarController,NSXMLParserDelegate{
         node6.VC = self
         node6.labelNode.text = "民生"
         node6.labelNode.name = "民生新聞"
+        node6.setScale(0.8)
         node6.fillColor = UIColor(red: 1, green: 0, blue: 1, alpha: 0.3)
         floatingCollectionScene.addChild(node6)
         
@@ -120,6 +127,7 @@ class udnViewController: UITabBarController,NSXMLParserDelegate{
         node7.VC = self
         node7.labelNode.text = "影劇"
         node7.labelNode.name = "影劇新聞"
+        node7.setScale(0.9)
         node7.fillColor = UIColor(red: 1, green: 0, blue: 1, alpha: 0.3)
         floatingCollectionScene.addChild(node7)
         
@@ -127,6 +135,7 @@ class udnViewController: UITabBarController,NSXMLParserDelegate{
         node8.VC = self
         node8.labelNode.text = "社會"
         node8.labelNode.name = "社會新聞"
+        node8.setScale(0.9)
         node8.fillColor = UIColor(red: 1, green: 0, blue: 1, alpha: 0.3)
         floatingCollectionScene.addChild(node8)
         
@@ -134,6 +143,7 @@ class udnViewController: UITabBarController,NSXMLParserDelegate{
         node9.VC = self
         node9.labelNode.text = "國際"
         node9.labelNode.name = "國際新聞"
+        node9.setScale(1)
         node9.fillColor = UIColor(red: 1, green: 0, blue: 1, alpha: 0.3)
         floatingCollectionScene.addChild(node9)
         
@@ -141,6 +151,7 @@ class udnViewController: UITabBarController,NSXMLParserDelegate{
         node10.VC = self
         node10.labelNode.text = "財經"
         node10.labelNode.name = "財經新聞"
+        node10.setScale(1.1)
         node10.fillColor = UIColor(red: 1, green: 0, blue: 1, alpha: 0.3)
         floatingCollectionScene.addChild(node10)
         
@@ -148,6 +159,7 @@ class udnViewController: UITabBarController,NSXMLParserDelegate{
         node11.VC = self
         node11.labelNode.text = "健康"
         node11.labelNode.name = "健康新聞"
+        node11.setScale(1.2)
         node11.fillColor = UIColor(red: 1, green: 0, blue: 1, alpha: 0.3)
         floatingCollectionScene.addChild(node11)
         
@@ -155,6 +167,7 @@ class udnViewController: UITabBarController,NSXMLParserDelegate{
         node12.VC = self
         node12.labelNode.text = "藝文"
         node12.labelNode.name = "藝文新聞"
+        node12.setScale(0.8)
         node12.fillColor = UIColor(red: 1, green: 0, blue: 1, alpha: 0.3)
         floatingCollectionScene.addChild(node12)
         
@@ -162,6 +175,7 @@ class udnViewController: UITabBarController,NSXMLParserDelegate{
         node13.VC = self
         node13.labelNode.text = "旅遊"
         node13.labelNode.name = "旅遊新聞"
+        node13.setScale(1.3)
         node13.fillColor = UIColor(red: 1, green: 0, blue: 1, alpha: 0.3)
         floatingCollectionScene.addChild(node13)
         
