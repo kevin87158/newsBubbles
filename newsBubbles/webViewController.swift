@@ -18,18 +18,8 @@ class webViewController: UIViewController,UIWebViewDelegate{
         super.viewDidLoad()
 
         loading.startAnimating()
-//        start(myWebView)
-        
-//        dispatch_async(dispatch_get_main_queue()) { () -> Void in
-        
-            self.myWebView.loadRequest(NSURLRequest(URL: NSURL(string:temp.loadUrl)!))
-//            self.loading.stopAnimating()
-//            self.loading.hidesWhenStopped = true
-//        }
-
-        
-//        finish(myWebView)
-
+//        self.myWebView.loadRequest(NSURLRequest(URL: NSURL(string:temp.loadUrl)!))
+        loading.transform = CGAffineTransformMakeScale(3, 3)
     }
 
     
@@ -40,8 +30,12 @@ class webViewController: UIViewController,UIWebViewDelegate{
         
         
 //    }
+
+    func webViewDidFinishLoad(webView: UIWebView) {
+//        loading.stopAnimating()
+    }
     
-    
+
     
     func start(_:UIWebView){ //
         loading.hidden = false

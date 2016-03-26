@@ -99,6 +99,7 @@ class ViewController: UITabBarController,NSXMLParserDelegate{
         node.labelNode.text = "即時新聞"
         node.labelNode.name = "即時新聞"
         node.fillColor = UIColor(red: 1, green: 1, blue: 0, alpha: 0.4)
+        node.setScale(2)
         floatingCollectionScene.addChild(node)
 
         let node1 = BubbleNode.instantiate()

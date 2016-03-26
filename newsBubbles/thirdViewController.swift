@@ -16,6 +16,12 @@ class thirdViewController: UIViewController,UITableViewDelegate,UITableViewDataS
     
     @IBOutlet weak var tbData: UITableView!
     
+    @IBAction func reload(sender: AnyObject) {
+        loading.startAnimating()
+        self.beginParsing(chooseUrl())
+        self.tbData.reloadData()  //更新tableView資料
+        loading.stopAnimating()
+    }
     var parser = NSXMLParser()
     var posts = NSMutableArray()
     var elements = NSMutableDictionary()
@@ -93,6 +99,10 @@ class thirdViewController: UIViewController,UITableViewDelegate,UITableViewDataS
         
         
         print("parse start")
+        
+        
+        self.navigationItem.title = temp.catgory
+        loading.transform = CGAffineTransformMakeScale(2, 2)
 // 載入畫面
         //方法一
         //        loadingView()
@@ -122,21 +132,16 @@ class thirdViewController: UIViewController,UITableViewDelegate,UITableViewDataS
 
         
         loading.startAnimating()
-        dispatch_async(dispatch_get_main_queue()) { () -> Void in
-            
+
         
-            let parseUrl = self.chooseUrl()
-            self.beginParsing(parseUrl)
-            self.tbData!.reloadData()  //更新tableView資料
-            self.loading.stopAnimating()
         
-        }
+        let parseUrl = chooseUrl()
+        self.beginParsing(parseUrl)
+
         
 
         
- 
-        
-        
+        tbData.reloadData()  //更新tableView資料
         tbData.delegate = self
         tbData.dataSource = self
 
@@ -151,7 +156,7 @@ class thirdViewController: UIViewController,UITableViewDelegate,UITableViewDataS
 //        }
         
 
-
+        loading.stopAnimating()
 
     }
     
@@ -182,14 +187,30 @@ class thirdViewController: UIViewController,UITableViewDelegate,UITableViewDataS
 
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell:myTableViewCell = tableView.dequeueReusableCellWithIdentifier("Cell",forIndexPath: indexPath)  as! myTableViewCell
+//        let cell:myTableViewCell = tableView.dequeueReusableCellWithIdentifier("Cell",forIndexPath: indexPath)  as! myTableViewCell
+        
+//        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) { () -> Void in
+        
+//        dispatch_async(dispatch_get_main_queue()) { () -> Void in
+//        cell.setCell(self.posts.objectAtIndex(indexPath.row).valueForKey("title") as! NSString as String, setDate: self.posts.objectAtIndex(indexPath.row).valueForKey("date") as! NSString as String, setSource: self.posts.objectAtIndex(indexPath.row).valueForKey("source") as! String, setImg: self.imageArray.objectAtIndex(indexPath.row) as! String)
+//            }
+//        }
+
+            let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
+            
+            let img    = cell.viewWithTag(1) as! UIImageView
+            let label1 = cell.viewWithTag(2) as! UILabel
+            let label2 = cell.viewWithTag(3) as! UILabel
+            let label3 = cell.viewWithTag(4) as! UILabel
+            
+            label1.text = self.posts.objectAtIndex(indexPath.row).valueForKey("title") as! NSString as String
+            label2.text = self.posts.objectAtIndex(indexPath.row).valueForKey("source") as? String
+            label3.text = self.posts.objectAtIndex(indexPath.row).valueForKey("date") as! NSString as String
+            
         
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) { () -> Void in
-            
-        dispatch_async(dispatch_get_main_queue()) { () -> Void in
-        cell.setCell(self.posts.objectAtIndex(indexPath.row).valueForKey("title") as! NSString as String, setDate: self.posts.objectAtIndex(indexPath.row).valueForKey("date") as! NSString as String, setSource: self.posts.objectAtIndex(indexPath.row).valueForKey("source") as! String, setImg: self.imageArray.objectAtIndex(indexPath.row) as! String)
-            
-        }
+            img.image = UIImage(data: NSData(contentsOfURL: NSURL(string: self.imageArray.objectAtIndex(indexPath.row) as! String)!)!)
+        
         
         }
         return cell
@@ -209,9 +230,15 @@ class thirdViewController: UIViewController,UITableViewDelegate,UITableViewDataS
         
         //使用手寫 呈現webView
             myWebView.frame = CGRectMake(0, 0, UIScreen.mainScreen().bounds.width, UIScreen.mainScreen().bounds.height)
+            loading.startAnimating()
             myWebView.loadRequest(NSURLRequest(URL: NSURL(string: posts.objectAtIndex(indexPath.row).valueForKey("link")as! String)!))
+        
+            loading.addSubview(myWebView)
+        
+        
             self.view.addSubview(myWebView)
-
+        
+        
         //        gotoWebViewController?.segueForUnwindingToViewController(gotoWebViewController!, fromViewController: self, identifier: "webViewSegue")
         
   
@@ -309,8 +336,7 @@ class thirdViewController: UIViewController,UITableViewDelegate,UITableViewDataS
         }
     }
     func parserDidEndDocument(parser: NSXMLParser) {
-        loadingView.stopAnimating()
-        print("end ")
+                print("end ")
     }
     
     //自訂方法
@@ -414,6 +440,22 @@ class thirdViewController: UIViewController,UITableViewDelegate,UITableViewDataS
         print("being parse")
         parser.parse()   //將資料丟給 parse處理
 
+//        if parser.parse(){
+//            print("succes")
+//        }else{
+//            print("reload")
+//        }
+
+        let parserSuccess:Bool = parser.parse()
+        
+        if parserSuccess{
+            print("parse success")
+        }else{
+            print("parse fail")
+        }
+        
+        
+        
     }
 
     func chooseUrl()->String{
@@ -445,12 +487,6 @@ class thirdViewController: UIViewController,UITableViewDelegate,UITableViewDataS
             rssSite = "https://tw.news.yahoo.com/rss/education"
 //            print(temp.catgory)
             break
-            
-        case "即時新聞":
-            rssSite = "https://tw.news.yahoo.com/rss/"
-//            print(temp.catgory)
-            break
-            
             
         case "影劇新聞":
             rssSite = "https://tw.news.yahoo.com/rss/entertainment"
@@ -513,7 +549,7 @@ class thirdViewController: UIViewController,UITableViewDelegate,UITableViewDataS
             rssSite = "http://www.appledaily.com.tw/rss/create/kind/sec/type/24"
             break
             
-        default:"即時新聞"
+        default:
         rssSite = "https://tw.news.yahoo.com/rss/"
 //        print(temp.catgory)
             break

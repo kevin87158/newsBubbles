@@ -56,7 +56,7 @@ class BubbleNode: SIFloatingNode{
         case "即時新聞":
                 temp.catgory = "即時新聞"
                 print("泡泡選擇:即時新聞")
-//                showTableView()
+                showTableView()
              
             break
             
@@ -255,8 +255,8 @@ class BubbleNode: SIFloatingNode{
         }
         print("goto  tableViewpage ")
         
-        SKAction.scaleTo(1.2, duration: 1)
         return   SKAction.scaleTo(1.2, duration: 1)
+
     }
     
     override func normalizeAnimation() -> SKAction? {
