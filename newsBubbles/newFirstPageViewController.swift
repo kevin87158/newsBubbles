@@ -53,6 +53,7 @@ class newFirstPageViewController: UIViewController {
         yahooNewsBubble.VC = self
         yahooNewsBubble.labelNode.text = "yahoo新聞"
         yahooNewsBubble.labelNode.name = "yahoo新聞"
+        yahooNewsBubble.setScale(1.3)
         yahooNewsBubble.fillColor = UIColor(red: 1, green: 1, blue: 0, alpha: 0.4)
         floatingCollectionScene.addChild(yahooNewsBubble)
         
@@ -60,6 +61,7 @@ class newFirstPageViewController: UIViewController {
         appleNewsBubble.VC = self
         appleNewsBubble.labelNode.text = "蘋果新聞"
         appleNewsBubble.labelNode.name = "蘋果新聞"
+        appleNewsBubble.setScale(1.2)
         appleNewsBubble.fillColor = UIColor(red: 0, green: 1, blue: 1, alpha: 0.3)
         floatingCollectionScene.addChild(appleNewsBubble)
         
@@ -67,6 +69,7 @@ class newFirstPageViewController: UIViewController {
         udnNewsBubble.VC = self
         udnNewsBubble.labelNode.text = "udn新聞"
         udnNewsBubble.labelNode.name = "udn新聞"
+        udnNewsBubble.setScale(0.9)
         udnNewsBubble.fillColor = UIColor(red: 1, green: 0, blue: 1, alpha: 0.3)
         floatingCollectionScene.addChild(udnNewsBubble)
         
@@ -74,6 +77,7 @@ class newFirstPageViewController: UIViewController {
         NewsBubble1.VC = self
         NewsBubble1.labelNode.text = "東森新聞"
         NewsBubble1.labelNode.name = "東森新聞"
+        NewsBubble1.setScale(1)
         NewsBubble1.fillColor = UIColor(red: 1, green: 0, blue: 0, alpha: 0.3)
         floatingCollectionScene.addChild(NewsBubble1)
         
@@ -81,6 +85,7 @@ class newFirstPageViewController: UIViewController {
         NewsBubble2.VC = self
         NewsBubble2.labelNode.text = "三立新聞"
         NewsBubble2.labelNode.name = "三立新聞"
+        NewsBubble2.setScale(1.3)
         NewsBubble2.fillColor = UIColor(red: 0, green: 0, blue: 1, alpha: 0.3)
         floatingCollectionScene.addChild(NewsBubble2)
         
@@ -88,6 +93,7 @@ class newFirstPageViewController: UIViewController {
         NewsBubble3.VC = self
         NewsBubble3.labelNode.text = "今日新聞"
         NewsBubble3.labelNode.name = "今日新聞"
+        NewsBubble3.setScale(1)
         NewsBubble3.fillColor = UIColor(red: 0, green: 1, blue: 0, alpha: 0.3)
         floatingCollectionScene.addChild(NewsBubble3)
         
@@ -95,6 +101,7 @@ class newFirstPageViewController: UIViewController {
         NewsBubble4.VC = self
         NewsBubble4.labelNode.text = "中天新聞"
         NewsBubble4.labelNode.name = "中天新聞"
+        NewsBubble4.setScale(0.9)
         NewsBubble4.fillColor = UIColor(red: 0.6, green: 0.1, blue: 0.1, alpha: 0.5)
         floatingCollectionScene.addChild(NewsBubble4)
         
