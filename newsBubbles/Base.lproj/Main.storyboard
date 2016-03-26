@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="goI-gB-my2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="goI-gB-my2">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -104,11 +103,11 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="83.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="L1O-dE-5L2">
+                                                <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="L1O-dE-5L2">
                                                     <rect key="frame" x="0.0" y="0.0" width="147" height="75.5"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wpC-Rh-dwf">
-                                                    <rect key="frame" x="174" y="8" width="309" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wpC-Rh-dwf">
+                                                    <rect key="frame" x="155" y="8" width="309" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="309" id="GhJ-Bs-kJL"/>
                                                         <constraint firstAttribute="height" constant="21" id="SnG-2R-74A"/>
@@ -117,8 +116,8 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JTM-ma-zs7">
-                                                    <rect key="frame" x="174" y="39" width="116" height="26"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JTM-ma-zs7">
+                                                    <rect key="frame" x="155" y="39" width="116" height="26"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="116" id="V6Z-Gs-Se7"/>
                                                         <constraint firstAttribute="height" constant="26" id="d8r-7W-Zlv"/>
@@ -127,8 +126,8 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" tag="4" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cnx-FB-wnv">
-                                                    <rect key="frame" x="318" y="39" width="262" height="26"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="4" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cnx-FB-wnv">
+                                                    <rect key="frame" x="240" y="39" width="262" height="26"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="26" id="7Bt-dm-A3g"/>
                                                     </constraints>
@@ -137,19 +136,6 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                            <constraints>
-                                                <constraint firstItem="cnx-FB-wnv" firstAttribute="leading" secondItem="JTM-ma-zs7" secondAttribute="trailing" constant="28" id="4HV-Gc-Qhm"/>
-                                                <constraint firstItem="wpC-Rh-dwf" firstAttribute="leading" secondItem="L1O-dE-5L2" secondAttribute="trailing" constant="27" id="Gdl-sI-KYO"/>
-                                                <constraint firstItem="cnx-FB-wnv" firstAttribute="top" secondItem="wpC-Rh-dwf" secondAttribute="bottom" constant="10" id="g1I-Wd-14t"/>
-                                                <constraint firstItem="JTM-ma-zs7" firstAttribute="leading" secondItem="L1O-dE-5L2" secondAttribute="trailing" constant="27" id="hez-8v-LpO"/>
-                                                <constraint firstItem="JTM-ma-zs7" firstAttribute="top" secondItem="wpC-Rh-dwf" secondAttribute="bottom" constant="10" id="iHp-fr-POn"/>
-                                                <constraint firstItem="wpC-Rh-dwf" firstAttribute="top" secondItem="9Cs-RZ-7uY" secondAttribute="topMargin" id="kLP-Mo-3nf"/>
-                                                <constraint firstItem="L1O-dE-5L2" firstAttribute="top" secondItem="9Cs-RZ-7uY" secondAttribute="top" id="muq-Jm-csj"/>
-                                                <constraint firstAttribute="trailing" secondItem="cnx-FB-wnv" secondAttribute="trailing" constant="20" id="pAq-is-ho7"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="L1O-dE-5L2" secondAttribute="bottom" id="yug-QZ-Asb"/>
-                                                <constraint firstItem="wpC-Rh-dwf" firstAttribute="leading" secondItem="9Cs-RZ-7uY" secondAttribute="leading" constant="174" id="zXa-hz-1vp"/>
-                                                <constraint firstItem="L1O-dE-5L2" firstAttribute="leading" secondItem="9Cs-RZ-7uY" secondAttribute="leading" id="zcd-20-rPk"/>
-                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
