@@ -13,6 +13,28 @@ class secondViewController: UIViewController {
     private var skView: SKView!
     private var floatingCollectionScene: BubblesScene!
 
+    var node = BubbleNode.instantiate()
+    var node1 = BubbleNode.instantiate()
+    var node2 = BubbleNode.instantiate()
+    var node3 = BubbleNode.instantiate()
+    var node4 = BubbleNode.instantiate()
+    var node5 = BubbleNode.instantiate()
+    var node6 = BubbleNode.instantiate()
+    var node7 = BubbleNode.instantiate()
+    var node8 = BubbleNode.instantiate()
+    var node9 = BubbleNode.instantiate()
+    var node10 = BubbleNode.instantiate()
+    var node11 = BubbleNode.instantiate()
+    var node12 = BubbleNode.instantiate()
+    var node13 = BubbleNode.instantiate()
+    var node14 = BubbleNode.instantiate()
+    
+    
+    
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -56,22 +78,31 @@ class secondViewController: UIViewController {
         self.navigationItem.title = "我的最愛"
         
         
-        print(temp.favoriteCategory)
-        switch temp.favoriteCategory {
         
+        
+   
+    }
+
+    override func viewDidAppear(animated: Bool) {
+        
+        print(temp.favoriteCategory)
+    if  temp.favoriteCategory != "" && node.labelNode.name != temp.favoriteCategory{
+            
+        switch temp.favoriteCategory{
+            
         case "即時新聞" :
             print("有favorite")
             
-            let node = BubbleNode.instantiate()
+            node = BubbleNode.instantiate()
             node.labelNode.text = "即時新聞"
             node.labelNode.name = temp.favoriteCategory
             node.fillColor = SKColor(red: 1, green: 1, blue: 0, alpha: 0.4)
             floatingCollectionScene.addChild(node)
-
+            
             break
             
         case "政治新聞":
-            let node1 = BubbleNode.instantiate()
+            node1 = BubbleNode.instantiate()
             node1.labelNode.text = "政治"
             node1.labelNode.name = temp.favoriteCategory
             node1.fillColor = SKColor(red: 1, green: 1, blue: 0, alpha: 0.4)
@@ -79,7 +110,7 @@ class secondViewController: UIViewController {
             break
             
         case "地方新聞" :
-            let node2 = BubbleNode.instantiate()
+            node2 = BubbleNode.instantiate()
             node2.labelNode.text = "地方"
             node2.labelNode.name = temp.favoriteCategory
             node2.fillColor = SKColor(red: 1, green: 1, blue: 0, alpha: 0.4)
@@ -89,7 +120,7 @@ class secondViewController: UIViewController {
             break
             
         case "科技新聞" :
-            let node3 = BubbleNode.instantiate()
+            node3 = BubbleNode.instantiate()
             node3.labelNode.text = "科技"
             node3.labelNode.name = temp.favoriteCategory
             node3.fillColor = SKColor(red: 1, green: 1, blue: 0, alpha: 0.4)
@@ -97,7 +128,7 @@ class secondViewController: UIViewController {
             break
             
         case "體育新聞" :
-            let node4 = BubbleNode.instantiate()
+            node4 = BubbleNode.instantiate()
             node4.labelNode.text = "體育"
             node4.labelNode.name = temp.favoriteCategory
             node4.fillColor = SKColor(red: 1, green: 1, blue: 0, alpha: 0.4)
@@ -105,7 +136,7 @@ class secondViewController: UIViewController {
             break
             
         case "教育新聞" :
-            let node5 = BubbleNode.instantiate()
+            node5 = BubbleNode.instantiate()
             node5.labelNode.text = "教育"
             node5.labelNode.name = temp.favoriteCategory
             node5.fillColor = SKColor(red: 1, green: 1, blue: 0, alpha: 0.4)
@@ -113,7 +144,7 @@ class secondViewController: UIViewController {
             break
             
         case "民生新聞" :
-            let node6 = BubbleNode.instantiate()
+            node6 = BubbleNode.instantiate()
             node6.labelNode.text = "民生"
             node6.labelNode.name = temp.favoriteCategory
             node6.fillColor = SKColor(red: 1, green: 1, blue: 0, alpha: 0.4)
@@ -121,7 +152,7 @@ class secondViewController: UIViewController {
             break
             
         case "影劇新聞" :
-            let node7 = BubbleNode.instantiate()
+            node7 = BubbleNode.instantiate()
             node7.labelNode.text = "影劇"
             node7.labelNode.name = temp.favoriteCategory
             node7.fillColor = SKColor(red: 1, green: 1, blue: 0, alpha: 0.4)
@@ -129,7 +160,7 @@ class secondViewController: UIViewController {
             break
             
         case "社會新聞" :
-            let node8 = BubbleNode.instantiate()
+            node8 = BubbleNode.instantiate()
             node8.labelNode.text = "社會"
             node8.labelNode.name = temp.favoriteCategory
             node8.fillColor = SKColor(red: 1, green: 1, blue: 0, alpha: 0.4)
@@ -137,7 +168,7 @@ class secondViewController: UIViewController {
             break
             
         case "國際新聞" :
-            let node9 = BubbleNode.instantiate()
+            node9 = BubbleNode.instantiate()
             node9.labelNode.text = "國際"
             node9.labelNode.name = temp.favoriteCategory
             node9.fillColor = SKColor(red: 1, green: 1, blue: 0, alpha: 0.4)
@@ -145,7 +176,7 @@ class secondViewController: UIViewController {
             break
             
         case "財經新聞" :
-            let node10 = BubbleNode.instantiate()
+            node10 = BubbleNode.instantiate()
             node10.labelNode.text = "財經"
             node10.labelNode.name = temp.favoriteCategory
             node10.fillColor = SKColor(red: 1, green: 1, blue: 0, alpha: 0.4)
@@ -153,7 +184,7 @@ class secondViewController: UIViewController {
             break
             
         case "社會新聞" :
-            let node11 = BubbleNode.instantiate()
+            node11 = BubbleNode.instantiate()
             node11.labelNode.text = "社會"
             node11.labelNode.name = temp.favoriteCategory
             node11.fillColor = SKColor(red: 1, green: 1, blue: 0, alpha: 0.4)
@@ -161,7 +192,7 @@ class secondViewController: UIViewController {
             break
             
         case "健康新聞" :
-            let node12 = BubbleNode.instantiate()
+            node12 = BubbleNode.instantiate()
             node12.labelNode.text = "健康"
             node12.labelNode.name = temp.favoriteCategory
             node12.fillColor = SKColor(red: 1, green: 1, blue: 0, alpha: 0.4)
@@ -169,7 +200,7 @@ class secondViewController: UIViewController {
             break
             
         case "藝文新聞" :
-            let node13 = BubbleNode.instantiate()
+            node13 = BubbleNode.instantiate()
             node13.labelNode.text =  "藝文"
             node13.labelNode.name = temp.favoriteCategory
             node13.fillColor = SKColor(red: 1, green: 1, blue: 0, alpha: 0.4)
@@ -177,25 +208,30 @@ class secondViewController: UIViewController {
             break
             
         case "旅遊新聞" :
-            let node14 = BubbleNode.instantiate()
+            if node14 == nil{
+                
+            }
+            node14 = BubbleNode.instantiate()
             node14.labelNode.text = "旅遊"
             node14.labelNode.name = temp.favoriteCategory
             node14.fillColor = SKColor(red: 1, green: 1, blue: 0, alpha: 0.4)
             floatingCollectionScene.addChild(node14)
-
+            
             break
             
         default:
             
             break
-        
+            
+            print("break")
+            
         }
-        
-        
-        
-   
-    }
+            
+        }
 
+    }
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
