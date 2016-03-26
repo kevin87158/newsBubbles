@@ -38,7 +38,7 @@ class thirdViewController: UIViewController,UITableViewDelegate,UITableViewDataS
     var myWebView = UIWebView()
 //    var urlForSegue = String()
     let loadingView : UIActivityIndicatorView = UIActivityIndicatorView()
-
+    var showWebViewController:UIViewController?
 
     
     override func viewDidLoad() {
@@ -224,22 +224,40 @@ class thirdViewController: UIViewController,UITableViewDelegate,UITableViewDataS
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
 
-//            urlForSegue = ""
+            temp.loadUrl = ""
             temp.loadUrl = posts.objectAtIndex(indexPath.row).valueForKey("link")as! String
         
-        
-        //使用手寫 呈現webView
-            myWebView.frame = CGRectMake(0, 0, UIScreen.mainScreen().bounds.width, UIScreen.mainScreen().bounds.height)
-            loading.startAnimating()
-            myWebView.loadRequest(NSURLRequest(URL: NSURL(string: posts.objectAtIndex(indexPath.row).valueForKey("link")as! String)!))
-        
-            loading.addSubview(myWebView)
+        let test  =   posts.objectAtIndex(indexPath.row).valueForKey("link")as! String
+        print(test)
         
         
-            self.view.addSubview(myWebView)
+//
+//        //使用手寫 呈現webView
+//            myWebView.frame = CGRectMake(0, 0, UIScreen.mainScreen().bounds.width, UIScreen.mainScreen().bounds.height)
+//            loading.startAnimating()
+//            myWebView.loadRequest(NSURLRequest(URL: NSURL(string: posts.objectAtIndex(indexPath.row).valueForKey("link")as! String)!))
+//        
+//            loading.addSubview(myWebView)
+
+        
+        
+        if showWebViewController == nil{
+            showWebViewController = self.storyboard?.instantiateViewControllerWithIdentifier("webViewController")
+        }
+        self.navigationController?.pushViewController(showWebViewController!, animated: true)
+
+        
+        
+        
+        
+//            self.navigationController?.pushViewController(myWebView, animated: true)
+//            self.view.addSubview(myWebView)
         
         
         //        gotoWebViewController?.segueForUnwindingToViewController(gotoWebViewController!, fromViewController: self, identifier: "webViewSegue")
+        
+        
+        
         
   
         //使用segue 傳資料給webView

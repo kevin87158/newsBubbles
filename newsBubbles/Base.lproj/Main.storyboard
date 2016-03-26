@@ -193,19 +193,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3eb-0i-Joc">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="580"/>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3eb-0i-Joc">
+                                <rect key="frame" x="0.0" y="-44" width="600" height="644"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
                                 <connections>
                                     <outlet property="delegate" destination="EBG-GH-gxo" id="Aqq-OX-cCo"/>
                                 </connections>
                             </webView>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="yKT-Kk-VMe">
-                                <rect key="frame" x="281" y="292" width="37" height="37"/>
-                                <color key="color" red="0.13725490868091583" green="1" blue="0.17254902422428131" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="yKT-Kk-VMe">
+                                <rect key="frame" x="281" y="282" width="37" height="37"/>
+                                <color key="color" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="3eb-0i-Joc" firstAttribute="top" secondItem="Wgu-VY-Nbq" secondAttribute="bottom" constant="-64" id="53B-Wf-Nbt"/>
+                            <constraint firstItem="yKT-Kk-VMe" firstAttribute="centerY" secondItem="yMZ-Uh-JfI" secondAttribute="centerY" id="H40-5d-tzl"/>
+                            <constraint firstItem="3eb-0i-Joc" firstAttribute="leading" secondItem="yMZ-Uh-JfI" secondAttribute="leading" id="X8u-fF-Dbg"/>
+                            <constraint firstItem="Epo-in-3aJ" firstAttribute="top" secondItem="3eb-0i-Joc" secondAttribute="bottom" id="Z2k-7j-9Sm"/>
+                            <constraint firstItem="yKT-Kk-VMe" firstAttribute="centerX" secondItem="yMZ-Uh-JfI" secondAttribute="centerX" id="iHq-uh-vaN"/>
+                            <constraint firstAttribute="trailing" secondItem="3eb-0i-Joc" secondAttribute="trailing" id="zag-hJ-gpW"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="loading" destination="yKT-Kk-VMe" id="eZH-wd-qG1"/>
@@ -214,7 +222,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IxK-Fu-0bd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1439" y="4657"/>
+            <point key="canvasLocation" x="1434" y="4828"/>
         </scene>
         <!--Second View Controller-->
         <scene sceneID="AEZ-Ob-tbR">

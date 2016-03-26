@@ -18,8 +18,12 @@ class webViewController: UIViewController,UIWebViewDelegate{
         super.viewDidLoad()
 
         loading.startAnimating()
-//        self.myWebView.loadRequest(NSURLRequest(URL: NSURL(string:temp.loadUrl)!))
+        self.myWebView.loadRequest(NSURLRequest(URL: NSURL(string:temp.loadUrl)!))
         loading.transform = CGAffineTransformMakeScale(3, 3)
+        
+        
+        
+        
     }
 
     
@@ -30,9 +34,14 @@ class webViewController: UIViewController,UIWebViewDelegate{
         
         
 //    }
+    
+    override func viewDidAppear(animated: Bool) {
+        print("webloading")
+          self.myWebView.loadRequest(NSURLRequest(URL: NSURL(string:temp.loadUrl)!))
+    }
 
     func webViewDidFinishLoad(webView: UIWebView) {
-//        loading.stopAnimating()
+        loading.stopAnimating()
     }
     
 
